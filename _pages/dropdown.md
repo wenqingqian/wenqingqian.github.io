@@ -8,5 +8,5 @@ children:
     - title: overview
       permalink: /blog/
     - title: search
-      permalink: /search/
+      permalink: /assets/data/search
 ---

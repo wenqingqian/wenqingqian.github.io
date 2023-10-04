@@ -420,9 +420,9 @@ if ('serviceWorker'in navigator) {
 		// 根据搜索规则构造跳转链接
 		let url;
 		if (searchRule === "year") {
-		  url = "/" + searchText + "/";
+		  url = "/blog/" + searchText + "/";
 		} else {
-		  url = "/" + searchRule + "/" + searchText + "/";
+		  url = "/blog/" + searchRule + "/" + searchText + "/";
 		}
 		// 进行页面跳转
 		window.location.href = url;
@@ -459,32 +459,6 @@ if ('serviceWorker'in navigator) {
 	</script>
 	
 
-<script>
-	let keepsh = true;
-// JavaScript函数 - 处理搜索
-function search(event) {
-  if (event.key === 'Enter') {
-    const searchText = document.querySelector("#searchInput").value;
-    const searchRule = document.querySelector("#searchRule").textContent;
-    // 根据搜索规则构造跳转链接
-    let url;
-    if (searchRule === "year") {
-      url = "/blog/" + searchText + "/";
-    } else {
-      url = "/blog/" + searchRule + "/" + searchText + "/";
-    }
-    // 进行页面跳转
-    window.location.href = url;
-  }
-}
 
-// JavaScript函数 - 设置搜索规则
-function setSearchRule(rule) {
-  document.querySelector("#searchRule").textContent = rule;
-  closes();
-}
-
-
-</script>
 </body>
 </html>

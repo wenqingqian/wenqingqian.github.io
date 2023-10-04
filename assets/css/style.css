@@ -1,0 +1,93 @@
+
+.tabs input {
+  visibility: hidden;
+  display: none;
+  align-items: center;
+  position: relative;
+}
+
+.buttonss {
+	align-items: center;
+	text-align: center;
+	width: 26%;
+margin-left: 37%;
+margin-right: 37%;
+  position: relative;
+  display: flex;
+  gap: 40px;
+  padding: 15px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+  background-color: #fff;
+  /* overflow: hidden; */
+  border-radius: 10px;
+}
+
+.buttonss label {
+	align-items: center;
+  width: 30%;
+  font-size: 1em;
+  -webkit-text-stroke: 1px #B509AC;
+  color: transparent;
+  opacity: .3;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.buttonss label:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px #B509AC) drop-shadow(0 0 20px #B509AC);
+}
+.tabs input:nth-child(1):checked ~ .buttonss label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttonss label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttonss label:nth-child(3){
+  color: #B509AC;
+  opacity: 1;
+  filter:drop-shadow(0 0 10px #B509AC);
+}
+
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 33%;
+  height: 3px;
+  transition: .5s;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  border-radius: 2px;
+  height: 100%;
+  background-color: #B509AC;
+  /* filter: drop-shadow(0 0 10px #B509AC) drop-shadow(0 0 20px #B509AC) drop-shadow(0 0 30px #B509AC) drop-shadow(0 0 50px #B509AC); */
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 23px;
+  border-radius: 4px;
+  height: 100%;
+  background-color: #B509AC;
+  /* filter: drop-shadow(0 0 10px #B509AC) drop-shadow(0 0 20px #B509AC) drop-shadow(0 0 30px #B509AC) drop-shadow(0 0 50px #B509AC) blur(5px); */
+}
+
+.tabs input:nth-child(1):checked ~ .buttonss .underline {
+  left: 4.5%;
+}
+
+.tabs input:nth-child(2):checked ~ .buttonss .underline {
+  left: 33%;
+}
+
+.tabs input:nth-child(3):checked ~ .buttonss .underline {
+  left: 62%;
+}
+

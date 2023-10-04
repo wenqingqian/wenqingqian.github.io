@@ -469,9 +469,9 @@ function search(event) {
     // 根据搜索规则构造跳转链接
     let url;
     if (searchRule === "year") {
-      url = "/" + searchText + "/";
+      url = "/blog/" + searchText + "/";
     } else {
-      url = "/" + searchRule + "/" + searchText + "/";
+      url = "/blog/" + searchRule + "/" + searchText + "/";
     }
     // 进行页面跳转
     window.location.href = url;

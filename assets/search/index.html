@@ -453,25 +453,30 @@
 		}
 
         function sendAjaxRequest() {
-			$.ajax({
-				url: "https://124.221.26.185:8001/identify/",
-				type: "post",
-				dataType : 'json',
-				processData: false,
-				contentType: "application/json",
-				cache: false,
-				// async: false,
-				success: function(data){
-					if(data.msg == "ok") console.log("222")
-					else{
-						window.location.href="/assets/search/error"
-					}
-				},
-				error: function(){
-					window.location.href="/assets/search/error"
-				}	
-			});
-		}
+		$.ajax({
+			url: "https://124.221.26.185:8001/identify/",
+			type: "post",
+			dataType : 'json',
+			processData: false,
+			contentType: "application/json",
+			cache: false,
+			// async: false,
+			success: function(data){
+				if(data.code==200){
+				}else if(data.code==101){
+					window.location.href="/assets/search/error/update";
+				}else if(data.code==102{
+					window.location.href="/assets/search/error/auth";
+				}
+				else{
+					window.location.href="/assets/search/error/unknown";
+				}
+			},
+			error: function(){
+				window.location.href="/assets/search/error"
+			}	
+		});
+        }
 		$(document).ready(function(){
 			sendAjaxRequest();
 			var sss = document.documentElement.getAttribute("data-theme");

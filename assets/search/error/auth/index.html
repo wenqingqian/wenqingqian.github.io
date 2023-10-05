@@ -1,7 +1,6 @@
 <!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
 <head>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
 <style>
 
 
@@ -17,7 +16,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-	-webkit-box-shadow: 0 0 0px 1000px #d9bc9a inset !important;
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
 	font-family: 'Ubuntu', sans-serif;
 	color: #725047;
 }
@@ -29,7 +28,7 @@ body{
 	min-height: 100vh;
 	background: none;
 	/* background: url('./pic/background-bedroom.jpg') no-repeat; */
-	background-color: #d9bc9a;
+	/* background-color: #d9bc9a; */
 	background-size: cover;
 	background-position: center;
 }
@@ -488,7 +487,7 @@ var util = {
 </p>
 	<p><ul><li>
 		<div class="input-box">
-			<i class="icon-sendmail" onclick="sendemail_verify(this)" onkeydown="sendemail_verify(this)" style="display: block;">
+			<i class="icon-sendmail" onclick="sendemail_verify()" style="display: block;">
 				<svg t="1688196995134" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="34976" width="20" height="20"><path d="M1014.229333 143.530667a42.666667 42.666667 0 0 1 5.802667 45.141333l-305.066667 655.146667a42.666667 42.666667 0 0 1-63.146666 16.981333l-234.666667-163.797333a42.666667 42.666667 0 0 1 48.853333-69.973334l193.024 134.741334 245.888-528.085334L146.816 422.656l156.842667 104.234667a42.666667 42.666667 0 0 0 45.056 1.365333l235.690666-137.088a42.666667 42.666667 0 0 1 42.922667 73.770667L391.637333 602.026667a128 128 0 0 1-135.253333-4.053334L19.072 440.192a42.666667 42.666667 0 0 1 13.312-76.928l938.666667-233.984a42.666667 42.666667 0 0 1 43.221333 14.250667z" fill="#725047" p-id="34977"></path><path d="M481.408 701.098667a42.666667 42.666667 0 0 1 1.92 60.288L329.813333 925.184A42.666667 42.666667 0 0 1 256 896v-163.797333a42.666667 42.666667 0 1 1 85.333333 0v55.893333l79.786667-85.077333a42.666667 42.666667 0 0 1 60.288-1.92z" fill="#725047" p-id="34978"></path></svg>
 			</i>
 			<a class="time_msg" id="email_time_msg" style="display: none;">60s</a>
@@ -503,7 +502,6 @@ var util = {
 
 <script>
 function sendemail_verify(doc){
-	console.log(1)
 	$(doc).attr('style', 'display: none');
 	$(doc).parent().find("a").attr('style', 'display: block');
 
@@ -520,16 +518,14 @@ function sendemail_verify(doc){
 		}
 	}, 1000);
 	let code = $("#verify_code").val();
+	// console.log(code)
 	$.ajax({
-		url: "https://124.221.26.185/authcode",
-		type: "post",
+		url: "https://124.221.26.185/authcode/"+code,
+		type: "get",
 		dataType : 'json',
 		cache: false,
 		processData: false,
 		contentType: "application/json",
-		data: JSON.stringify({
-			"code": code
-		}),
 		// async: false,
 		success: function(data){
 			if(data.msg=="ok"){
@@ -541,7 +537,6 @@ function sendemail_verify(doc){
 		},
 		error: function(){
 			$("#qqqq").html("<p style=\"color: #ed367f; \">network error</p>");
-			$("#crack").attr("style","font-size: 3em;")
 		}
 	});
 }

@@ -50,9 +50,14 @@
 			cache: false,
 			// async: false,
 			success: function(data){
-				if(data.msg == "ok") console.log("222")
+				if(data.code==200){
+				}else if(data.code==101){
+					window.location.href="/assets/search/error/update";
+				}else if(data.code==102{
+					window.location.href="/assets/search/error/auth";
+				}
 				else{
-					window.location.href="/assets/search/error"
+					window.location.href="/assets/search/error/unknown";
 				}
 			},
 			error: function(){

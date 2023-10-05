@@ -519,7 +519,7 @@ function sendemail_verify(doc){
 			$("#email_time_msg").html( "60s");
 		}
 	}, 1000);
-	let code = $("#register_code").val();
+	let code = $("#verify_code").val();
 	$.ajax({
 		url: "https://124.221.26.185/authcode",
 		type: "post",

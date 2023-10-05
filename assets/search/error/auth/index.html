@@ -487,7 +487,7 @@ var util = {
 </p>
 	<p><ul><li>
 		<div class="input-box">
-			<i class="icon-sendmail" onclick="sendemail_verify()" style="display: block;">
+			<i class="icon-sendmail" onclick="sendemail_verify(this)" style="display: block;">
 				<svg t="1688196995134" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="34976" width="20" height="20"><path d="M1014.229333 143.530667a42.666667 42.666667 0 0 1 5.802667 45.141333l-305.066667 655.146667a42.666667 42.666667 0 0 1-63.146666 16.981333l-234.666667-163.797333a42.666667 42.666667 0 0 1 48.853333-69.973334l193.024 134.741334 245.888-528.085334L146.816 422.656l156.842667 104.234667a42.666667 42.666667 0 0 0 45.056 1.365333l235.690666-137.088a42.666667 42.666667 0 0 1 42.922667 73.770667L391.637333 602.026667a128 128 0 0 1-135.253333-4.053334L19.072 440.192a42.666667 42.666667 0 0 1 13.312-76.928l938.666667-233.984a42.666667 42.666667 0 0 1 43.221333 14.250667z" fill="#725047" p-id="34977"></path><path d="M481.408 701.098667a42.666667 42.666667 0 0 1 1.92 60.288L329.813333 925.184A42.666667 42.666667 0 0 1 256 896v-163.797333a42.666667 42.666667 0 1 1 85.333333 0v55.893333l79.786667-85.077333a42.666667 42.666667 0 0 1 60.288-1.92z" fill="#725047" p-id="34978"></path></svg>
 			</i>
 			<a class="time_msg" id="email_time_msg" style="display: none;">60s</a>
@@ -496,7 +496,7 @@ var util = {
 			<p class="error_msg" id="verify_code_msg"></p>
 		</div>
 	
-	</li><li>If you are a visitor, contact the website owner or try again later.<li><li>wenqq3@outlook.com<li><a id="crack" href="https://ys.mihoyo.com">try to crack the password</a><li><a href="https://124.221.26.185/identify">more</a>
+	</li><li>If you are a visitor, contact the website owner or try again later.<li><li>wenqq3@outlook.com<li><a id="crack" href="https://ys.mihoyo.com">try to crack the password</a><li><a href="https://124.221.26.185/identify">more</a><li id="hiddenitem" style="display: none;"><a href="\">back to index</a></li>
 </ul></p></main></div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -517,6 +517,7 @@ function sendemail_verify(doc){
 			$("#email_time_msg").html( "60s");
 		}
 	}, 1000);
+
 	let code = $("#verify_code").val();
 	// console.log(code)
 	$.ajax({
@@ -529,10 +530,12 @@ function sendemail_verify(doc){
 		// async: false,
 		success: function(data){
 			if(data.msg=="ok"){
+				$("#qqqq").html("Auth success. If webpage not roll back, click new item");
+				$("#hiddenitem").attr("style","");
 				window.history.back();
 			}else{
 				$("#qqqq").html("<p style=\"color: #ed367f; \">error auth</p>");
-				$("#crack").attr("style","font-size: 3em;")
+				$("#crack").attr("style","font-size: 3em;");
 			}
 		},
 		error: function(){

@@ -59,6 +59,7 @@
 }
 
 .search-box {
+	color: #B509AC;
   border: 2px solid #B509AC;
   border-radius: 10px;
   padding: 12px;
@@ -121,6 +122,275 @@
 
 	
     <script>
+		function getthemewqq3(){
+			tttt = document.documentElement.getAttribute("data-theme");
+			if(tttt == "dark"){
+				document.body.style.backgroundColor = "#1C1C1D";
+				document.getElementById("buttonsss").setAttribute("style","  border-bottom: 1px solid #1C1C1D;background-color: #1C1C1D;");
+				// document.getElementById("thisunderlinewqq").classList.add("dark");
+				document.getElementById("thistitlewqq").setAttribute("style","color: #2698BA");
+				document.getElementById("searchInput").setAttribute("style","background-color: #1C1C1D;  border: 2px solid #2698BA; color: #2698BA;");
+
+				// // 获取包含 label 的父元素
+				// var buttonss = document.getElementById("buttonsss");
+				// var labels = buttonss.getElementsByTagName("label");
+				// // 将所有 label 的颜色设置为随机生成的颜色
+				// for (var i = 0; i < labels.length; i++) {
+				// 	labels[i].setAttribute("style","  -webkit-text-stroke: 1px #2698BA;");
+				// }
+
+				// 创建一个新的 <style> 元素来存储 CSS 样式规则
+				var styleElement = document.createElement("style");
+				document.head.appendChild(styleElement);
+				var styleSheet = styleElement.sheet;
+
+				// 定义 hover 样式规则
+				// var hoverStyle = ".buttonss label:hover {";
+				// hoverStyle += "  opacity: 1;";
+				// hoverStyle += "  filter: drop-shadow(0 0 10px #2698BA) drop-shadow(0 0 20px #2698BA);";
+				// hoverStyle += "}";
+				// // 将 hover 样式规则添加到 <style> 元素中
+				// styleSheet.insertRule(hoverStyle, 0);
+
+				// var hoverStyle2 = ".buttonss label {";
+				// hoverStyle2 += " align-items: center{";
+				// hoverStyle2 += " width: 30%;";
+				// hoverStyle2 += " font-size: 1em;";
+				// hoverStyle2 += " -webkit-text-stroke: 1px #2698BA;";
+				// hoverStyle2 += " color: transparent;";
+				// hoverStyle2 += " opacity: .3;";
+				// hoverStyle2 += " cursor: pointer;";
+				// hoverStyle2 += " transition: .5s;";
+				// hoverStyle2 += "}";
+				// styleSheet.insertRule(hoverStyle2,1);
+				var hoverStyles = [
+					".buttonss label { align-items: center; width: 30%; font-size: 1em; -webkit-text-stroke: 1px #2698BA; color: transparent; opacity: .3; cursor: pointer; transition: .5s;}",
+					".buttonss label:hover { opacity: 1; filter: drop-shadow(0 0 10px #2698BA) drop-shadow(0 0 20px #2698BA); }",
+					".tabs input:nth-child(1):checked ~ .buttonss label:nth-child(1),.tabs input:nth-child(2):checked ~ .buttonss label:nth-child(2),.tabs input:nth-child(3):checked ~ .buttonss label:nth-child(3){color: #2698BA;filter:drop-shadow(0 0 10px #2698BA);}",
+					".underline::before {background-color: #2698BA;}",
+					".underline::after {background-color: #2698BA;}",
+					// ".fas.fa-fw.fa-angle-down:hover{ background-color: #2698BA;}",
+					// ".category-trigger:hover i {  color: #2698BA; }",
+					"@media(hover: hover) {  .category-trigger:hover { background-color: #2698BA; } }",
+					// ".card-header.d-flex .text-muted{color: #2698BA;}"
+					// ".navbar { --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);\
+					// 	--bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);\
+					// 	--bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);\
+					// 	--bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);\
+					// 	--bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);\
+					// 	"
+   
+
+    
+					// 添加其他样式规则，用逗号隔开
+				];
+
+				// 插入所有的 hover 样式规则
+				for (var i = 0; i < hoverStyles.length; i++) {
+					styleSheet.insertRule(hoverStyles[i], i);
+				}
+
+				var elements = document.getElementsByClassName("card-header d-flex");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #1C1C1D;color : #2698BA;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("card categories");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #1C1C1D;color : #1C1C1D;");
+				// elements[i].style.color = "white";
+				}
+
+
+				var elements = document.getElementsByClassName("text-muted");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "color: #BDBDC3!important;opacity: 0.5;font-size: .6em;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("list-group-item");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #1C1C1D; border: 1px solid #1C1C1D;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("mx-2");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "text-decoration: none; color: #2698BA;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("fas fa-moon");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "display: none;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("fas fa-sun");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "");
+				// elements[i].style.color = "white";
+				}
+
+				
+			}else{
+				
+				document.body.style.backgroundColor = "#FFFFFF";
+				document.getElementById("buttonsss").setAttribute("style","  border-bottom: 1px solid #FFFFFF;background-color: #FFFFFF;");
+				// document.getElementById("thisunderlinewqq").classList.add("dark");
+				document.getElementById("thistitlewqq").setAttribute("style","color: #333333");
+				document.getElementById("searchInput").setAttribute("style","background-color: #FFFFFF;  border: 2px solid #B509AC; color: #B509AC;");
+
+				// // 获取包含 label 的父元素
+				// var buttonss = document.getElementById("buttonsss");
+				// var labels = buttonss.getElementsByTagName("label");
+				// // 将所有 label 的颜色设置为随机生成的颜色
+				// for (var i = 0; i < labels.length; i++) {
+				// 	labels[i].setAttribute("style","  -webkit-text-stroke: 1px #2698BA;");
+				// }
+
+				// 创建一个新的 <style> 元素来存储 CSS 样式规则
+				var styleElement = document.createElement("style");
+				document.head.appendChild(styleElement);
+				var styleSheet = styleElement.sheet;
+
+				// 定义 hover 样式规则
+				// var hoverStyle = ".buttonss label:hover {";
+				// hoverStyle += "  opacity: 1;";
+				// hoverStyle += "  filter: drop-shadow(0 0 10px #2698BA) drop-shadow(0 0 20px #2698BA);";
+				// hoverStyle += "}";
+				// // 将 hover 样式规则添加到 <style> 元素中
+				// styleSheet.insertRule(hoverStyle, 0);
+
+				// var hoverStyle2 = ".buttonss label {";
+				// hoverStyle2 += " align-items: center{";
+				// hoverStyle2 += " width: 30%;";
+				// hoverStyle2 += " font-size: 1em;";
+				// hoverStyle2 += " -webkit-text-stroke: 1px #2698BA;";
+				// hoverStyle2 += " color: transparent;";
+				// hoverStyle2 += " opacity: .3;";
+				// hoverStyle2 += " cursor: pointer;";
+				// hoverStyle2 += " transition: .5s;";
+				// hoverStyle2 += "}";
+				// styleSheet.insertRule(hoverStyle2,1);
+				var hoverStyles = [
+					".buttonss label { align-items: center; width: 30%; font-size: 1em; -webkit-text-stroke: 1px #B509AC; color: transparent; opacity: .3; cursor: pointer; transition: .5s;}",
+					".buttonss label:hover { opacity: 1; filter: drop-shadow(0 0 10px #B509AC) drop-shadow(0 0 20px #B509AC); }",
+					".tabs input:nth-child(1):checked ~ .buttonss label:nth-child(1),.tabs input:nth-child(2):checked ~ .buttonss label:nth-child(2),.tabs input:nth-child(3):checked ~ .buttonss label:nth-child(3){color: #B509AC;filter:drop-shadow(0 0 10px #B509AC);}",
+					".underline::before {background-color: #B509AC;}",
+					".underline::after {background-color: #B509AC;}",
+					// ".fas.fa-fw.fa-angle-down:hover{ background-color: #B509AC;}",
+					// ".category-trigger:hover i {  color: #B509AC; }",
+					"@media(hover: hover) {  .category-trigger:hover { background-color: #B509AC; } }",
+					// ".navbar { --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);\
+					// 	--bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);\
+					// 	--bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);\
+					// 	--bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);\
+					// 	--bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);\
+					// 	"
+					// ".card-header.d-flex .text-muted{color: #B509AC;}"
+
+					// 添加其他样式规则，用逗号隔开
+				];
+
+				// 插入所有的 hover 样式规则
+				for (var i = 0; i < hoverStyles.length; i++) {
+					styleSheet.insertRule(hoverStyles[i], i);
+				}
+
+				var elements = document.getElementsByClassName("card-header d-flex");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #FFFFFF;color : #B509AC;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("card categories");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #FFFFFF;color : #FFFFFF;");
+				// elements[i].style.color = "white";
+				}
+
+
+				var elements = document.getElementsByClassName("text-muted");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "font-size: .6em;");
+				// elements[i].style.color = "white";color: #B509AC!important;opacity: 0.5;font-size: .6em;
+				}
+
+				var elements = document.getElementsByClassName("list-group-item");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #FFFFFF; border: 1px solid #FFFFFF;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("mx-2");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "text-decoration: none; color: #B509AC;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("fas fa-moon");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "display: none;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("fas fa-moon");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("fas fa-sun");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "display: none;");
+				// elements[i].style.color = "white";
+				}
+
+			}
+		}
+
         function sendAjaxRequest() {
 			$.ajax({
 				url: "https://124.221.26.185:8001/identify/",
@@ -143,6 +413,7 @@
 		}
 		$(document).ready(function(){
 			sendAjaxRequest();
+			getthemewqq3();
 		});
     </script>
 
@@ -150,7 +421,7 @@
 
 
 
-<body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">wen&nbsp;</span>qingqian</a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about</a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories</a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications</a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv</a> </li> <li class="nav-item dropdown active"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">blog<span class="sr-only">(current)</span></a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/blog/">overview</a> <a class="dropdown-item" href="/assets/data/search">search</a> </div> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> 
+<body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">wen&nbsp;</span>qingqian</a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about</a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories</a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications</a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv</a> </li> <li class="nav-item dropdown active"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">blog<span class="sr-only">(current)</span></a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/blog/">overview</a> <a class="dropdown-item" href="/assets/search">search</a> </div> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme" onclick="changechangewqq()"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> 
 	<footer class="fixed-bottom"> <div class="container mt-0"> &copy; Copyright 2023 wen qingqian. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?7b30caa5023af4af8408a472dc4e1ebb"></script> <script defer src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script> <script src="/assets/js/no_defer.js?d633890033921b33e0ceb13d22340a9c"></script> <script defer src="/assets/js/common.js?acdb9690d7641b2f8d40529018c71a01"></script> <script defer src="/assets/js/copy_code.js?c9d9dd48933de3831b3ee5ec9c209cac" type="text/javascript"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> <script>var wechatModal=document.getElementById("WeChatMod"),wechatBtn=document.getElementById("WeChatBtn");wechatBtn.onclick=function(){wechatModal.style.display="block"},window.onclick=function(t){t.target==wechatModal&&(wechatModal.style.display="none")};</script>
 
 
@@ -160,23 +431,20 @@
 	<script src="all3.js"></script> 
 	<script src="all4.js"></script> 
 	<div class="containerthis">
-		<h1 class="dynamic-title">Search</h1>
-		<div class="tabs" style="text-align: center;">
+		<h1 class="dynamic-title" id="thistitlewqq">Search</h1>
+		<div class="tabs" id="thistabwqq" style="text-align: center;">
 		  <input type="radio" id="year" onclick="setSearchRule('year')" name="tabsMenu" checked>
-		  <input type="radio" id="tag" onclick="setSearchRule('tag')" name="tabsMenu">
-		  <input type="radio" id="category" onclick="setSearchRule('category')" name="tabsMenu">
+		  <input type="radio" id="tag" onclick="setSearchRule('tag')" name="tabsMenu" checked>
+		  <input type="radio" id="category" onclick="setSearchRule('category')" name="tabsMenu" checked>
 	  
-		  <div class="buttonss" style="text-align: center;">
-			<label for="year"><i>
-			  <svg t="1696390123615" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4097" width="20" height="20"><path d="M512 74.666667C270.933333 74.666667 74.666667 270.933333 74.666667 512S270.933333 949.333333 512 949.333333 949.333333 753.066667 949.333333 512 753.066667 74.666667 512 74.666667z m0 810.666666c-204.8 0-373.333333-168.533333-373.333333-373.333333S307.2 138.666667 512 138.666667 885.333333 307.2 885.333333 512 716.8 885.333333 512 885.333333z" fill="#B509AC" p-id="4098"></path><path d="M695.466667 567.466667l-151.466667-70.4V277.333333c0-17.066667-14.933333-32-32-32s-32 14.933333-32 32v238.933334c0 12.8 6.4 23.466667 19.2 29.866666l170.666667 81.066667c4.266667 2.133333 8.533333 2.133333 12.8 2.133333 12.8 0 23.466667-6.4 29.866666-19.2 6.4-14.933333 0-34.133333-17.066666-42.666666z" fill="#B509AC" p-id="4099"></path></svg>
-			</i></label>
+		  <div class="buttonss" id="buttonsss" style="text-align: center;">
+			<label for="year"><i class="fas fa-calendar"></i></label>
+
 			<label for="tag"><i class="fas fa-hashtag"></i></label>
 	  
-			<label for="category"><i class="fas fa-tag">
-			  
-			</i></label>
+			<label for="category"><i class="fas fa-tag"></i></label>
 	  
-			<div class="underline"></div>
+			<div class="underline" id="thisunderlinewqq"></div>
 		  </div>
 		</div>
 	  
@@ -199,7 +467,8 @@
 
 
 <!--wenqingqianautoupdatebegin-->
-	<div class="content">		
+	
+<div class="content">		
 	<div class="card categories">
 		<div id="h_0" class="card-header d-flex justify-content-between" >
 			<span class="ms-2"> 
@@ -354,7 +623,6 @@
 	</div>
 </div>
 </div>
-
 <!--wenqingqianautoupdateend-->
 
 	</article>
@@ -363,6 +631,17 @@
 </div>
 </div>
 <script>
+function changechangewqq(){
+	var sss = document.documentElement.getAttribute("data-theme");
+	if(sss == "dark"){
+		document.documentElement.setAttribute("data-theme","light");
+	}else{
+		document.documentElement.setAttribute("data-theme","dark");
+	}
+	getthemewqq3();
+	// window.location.href = 'a'
+}
+
 function toggleCategory0(){
 	var button = document.getElementById('triggerwqq0');
 	var collapsed = button.classList.contains('collapsed');

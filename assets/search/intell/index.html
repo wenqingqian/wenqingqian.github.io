@@ -1,0 +1,887 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> | wen qingqian</title> <meta name="author" content="wen qingqian"/> <meta name="description" content="notethis description on _config.yml A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "/> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"/> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"/> <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"> <link rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> <link rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?19f3075a2d19613090fe9e16b564e1fe" media="" id="highlight_theme_light"/> <link rel="shortcut icon" href="/assets/img/webicon.png?9b6dfb77eabb5d7c35bb7a64cbe4f51b"/> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://wenqingqian.github.io/blog/"> <link rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?e74e74bf055e5729d44a7d031a5ca6a5" media="none" id="highlight_theme_dark"/> <script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6"></script> <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f"></script> 
+
+	<script src="/assets/js/theme.js?96d6b3e1c3604aca8b6134c7afdd5db6"></script> <script src="/assets/js/dark_mode.js?9b17307bb950ffa2e34be0227f53558f"></script> 
+
+
+
+		<link rel="stylesheet" href="all.css">
+		<link rel="stylesheet" href="all3.css">
+		<link rel="stylesheet" href="all2.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials">
+        <link rel="dns-prefetch" href="https://www.google-analytics.com">
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> -->
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css"> -->
+        
+<link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" >
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+
+
+<style>
+	/* CSS样式 - 圆角搜索框 */
+
+.dynamic-title {
+	align-items: center;
+  font-size: 60px;
+  color: #333;
+  margin-top: 3em; /* 调整标题的底部间距 */
+}
+
+.containerthis {
+  text-align: center;
+}
+
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 15px; /* 调整搜索框和标题的间距 */
+}
+
+.search-box-container {
+  position: relative;
+}
+
+.search-box {
+	color: #B509AC;
+  border: 2px solid #B509AC;
+  border-radius: 10px;
+  padding: 12px;
+  width: 250px; /* 缩短搜索框宽度 */
+  outline: none; /* 去掉默认的焦点样式 */
+  font-size: 18px;
+}
+
+/* 设置输入框内文本颜色 */
+.search-box::placeholder {
+  color: #B509AC;
+  opacity: 0.4; /* 添加虚化效果 */
+}
+
+/* 下拉菜单样式 */
+.dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 60px; /* 调整下拉列表大小 */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* 鼠标悬停时显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px; /* 调整选项内边距 */
+  text-decoration: none;
+  display: block;
+  white-space: nowrap; /* 防止文本换行 */
+}
+
+.dropdown-content a:hover {
+  background-color: #B509AC;
+  color: white;
+}
+
+html[my-theme=dark]{
+	--my-sm-tb-color: #e8e8e8;
+	--my-sm-tb-b-color: #1C1C1D;
+	--my-sm-tb-border-color: rgba(255,255,255,.8);
+	--my-sm-tb-b-h-color: #e8e8e8;
+	--my-sm-tb-icon-color: #000;
+	--my-sm-desp-color: #fff;
+	--my-sm-cutline: rgba(255,255,255,.1);
+	--my-sm-dyn-color: #2698BA;
+}
+html{
+	--my-sm-tb-color: #000;
+	--my-sm-tb-b-color: #fff;
+	--my-sm-tb-border-color: rgba(0,0,0,.1);
+	--my-sm-tb-b-h-color: #1C1C1D;
+	--my-sm-tb-icon-color: #fff;
+	--my-sm-desp-color: #828282;
+	--my-sm-cutline: rgba(0,0,0,.1);
+	--my-sm-dyn-color: #B509AC;
+}
+
+.container-mysm {
+    max-width: 800px;
+}
+.container-mysm.mt-5 {
+    margin-top: 3rem!important;
+}
+/* @media (min-width: 768px){
+.container-mysm {
+    max-width: 720px;
+}
+}
+@media (min-width: 576px){
+.container-mysm {
+    max-width: 540px;
+}
+} */
+.post-mysm-list-mysm li a {
+    color: var(--my-sm-tb-color);
+    text-decoration: none;
+}
+.post-mysm-list-mysm p{
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+.fa-sm {
+    font-size: .875em;
+    line-height: .0714285718em;
+    vertical-align: 0.0535714295em;
+}
+.post-mysm-list-mysm li .post-mysm-tags {
+    color: var(--my-sm-desp-color);
+    font-size: .875rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0;
+    margin-bottom: 0px;
+	margin-top: 4px;
+}
+.post-mysm-list-mysm li {
+	border-bottom: 1px solid var(--my-sm-cutline);
+	list-style: none;
+	padding-top: .8em;
+	padding-bottom: .8em;
+}
+.container-mysm {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.top-button-sscc {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--my-sm-tb-b-color);
+  color: var(--my-sm-tb-color);
+  border: 1px solid var(--my-sm-tb-border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 12px 10px;
+  margin-bottom: 3em;
+}
+
+.top-button-sscc:hover {
+  background-color: var(--my-sm-tb-b-h-color);
+  border: 1px solid rgba(0,0,0,.3);
+  /* padding: 20px 20px; */
+  padding: 6px 7px;
+  padding-right: 10px;
+}
+
+.top-button-sscc .percentage {
+  display: block;
+}
+
+.top-button-sscc:hover .percentage {
+  display: none;
+}
+.top-button-sscc i{
+	display: none;
+}
+.top-button-sscc:hover i{
+	display: block;
+}
+
+.top-button-sscc i {
+  margin-left: 5px;
+}
+.post-mysm-desp{
+	color: var(--my-sm-tb-color);
+	transition: .3s;
+}
+
+.post-mysm-title:hover{
+	color: var(--my-sm-dyn-color);
+}
+.post-mysm-tags a:hover{
+	color: var(--my-sm-dyn-color);
+}
+
+
+	</style>
+	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
+
+
+
+
+	
+	</head>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<body>
+
+	
+    <script>
+		function getthemewqq3(){
+			tttt = document.documentElement.getAttribute("my-theme");
+			if(tttt == "dark"){
+				document.documentElement.setAttribute("data-theme","dark");
+				document.body.style.backgroundColor = "#1C1C1D";
+				document.getElementById("buttonsss").setAttribute("style","  border-bottom: 1px solid #1C1C1D;background-color: #1C1C1D;");
+				// document.getElementById("thisunderlinewqq").classList.add("dark");
+				document.getElementById("thistitlewqq").setAttribute("style","color: #2698BA");
+				document.getElementById("searchInput").setAttribute("style","background-color: #1C1C1D;  border: 2px solid #2698BA; color: #2698BA;");
+
+				// // 获取包含 label 的父元素
+				// var buttonss = document.getElementById("buttonsss");
+				// var labels = buttonss.getElementsByTagName("label");
+				// // 将所有 label 的颜色设置为随机生成的颜色
+				// for (var i = 0; i < labels.length; i++) {
+				// 	labels[i].setAttribute("style","  -webkit-text-stroke: 1px #2698BA;");
+				// }
+
+				// 创建一个新的 <style> 元素来存储 CSS 样式规则
+				var styleElement = document.createElement("style");
+				document.head.appendChild(styleElement);
+				var styleSheet = styleElement.sheet;
+
+				// 定义 hover 样式规则
+				// var hoverStyle = ".buttonss label:hover {";
+				// hoverStyle += "  opacity: 1;";
+				// hoverStyle += "  filter: drop-shadow(0 0 10px #2698BA) drop-shadow(0 0 20px #2698BA);";
+				// hoverStyle += "}";
+				// // 将 hover 样式规则添加到 <style> 元素中
+				// styleSheet.insertRule(hoverStyle, 0);
+
+				// var hoverStyle2 = ".buttonss label {";
+				// hoverStyle2 += " align-items: center{";
+				// hoverStyle2 += " width: 30%;";
+				// hoverStyle2 += " font-size: 1em;";
+				// hoverStyle2 += " -webkit-text-stroke: 1px #2698BA;";
+				// hoverStyle2 += " color: transparent;";
+				// hoverStyle2 += " opacity: .3;";
+				// hoverStyle2 += " cursor: pointer;";
+				// hoverStyle2 += " transition: .5s;";
+				// hoverStyle2 += "}";
+				// styleSheet.insertRule(hoverStyle2,1);
+				var hoverStyles = [
+					".buttonss label { align-items: center; width: 30%; font-size: 1em; -webkit-text-stroke: 1px #2698BA; color: transparent; opacity: .3; cursor: pointer; transition: .5s;}",
+					".buttonss label:hover { opacity: 1; filter: drop-shadow(0 0 10px #2698BA) drop-shadow(0 0 20px #2698BA); }",
+					".tabs input:nth-child(1):checked ~ .buttonss label:nth-child(1),.tabs input:nth-child(2):checked ~ .buttonss label:nth-child(2),.tabs input:nth-child(3):checked ~ .buttonss label:nth-child(3){color: #2698BA;filter:drop-shadow(0 0 10px #2698BA);}",
+					".underline::before {background-color: #2698BA;}",
+					".underline::after {background-color: #2698BA;}",
+					// ".fas.fa-fw.fa-angle-down:hover{ background-color: #2698BA;}",
+					// ".category-trigger:hover i {  color: #2698BA; }",
+					"@media(hover: hover) {  .category-trigger:hover { background-color: #2698BA; } }",
+					// ".card-header.d-flex .text-muted{color: #2698BA;}"
+					// ".navbar { --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);\
+					// 	--bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);\
+					// 	--bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);\
+					// 	--bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);\
+					// 	--bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);\
+					// 	"
+					".fas.fa-moon { display: none;content: \"\\f186\";}",
+					".fas.fa-sun { display: block;content: \"\\f185\";}",
+					":root .fa-sun { padding-left: 10px; padding-top: 12px;}",
+					" html[data-theme=dark] .fa-sun {display: block;}",
+					"html[data-theme=light] .fa-sun {}",
+					" html[data-theme=dark] .fa-moon { display: none;}",
+					"html[data-theme=light] .fa-moon {}",
+					".navbar{border-bottom: 1px solid #424246;background-color: #1C1C1D;}",
+
+					".navbar.navbar-light .navbar-nav .nav-item .nav-link:hover{ color: #2896BA;}",
+					".navbar.navbar-light .navbar-nav .nav-item .nav-link{ color: #e8e8e8;}",
+					".navbar.navbar-light .navbar-brand {color : #e8e8e8;} ",
+
+					".font-weight-bold { color: #e8e8e8;}",
+
+					"#light-toggle{ color: #e8e8e8;}",
+					"#light-toggle:hover{ color: #2698BA;}",
+					".navbar.navbar-light .navbar-nav .nav-item.active>.nav-link { color: #2698BA;}",
+
+					".navbar .dropdown-menu{ background-color: #1C1C1D;border: 1px solid #424246;}",
+					".navbar .dropdown-menu a:not(.active) {color: #e8e8e8;}",
+					".dropdown-item:hover{color: #2698BA;}",
+
+					"html[data-theme=dark] { --global-hover-color: #2698BA;}",
+					":root { --global-hover-color: #2698BA;}",
+
+					":root { --global-footer-bg-color: #e8e8e8; --global-footer-text-color: #1c1c1d; --global-footer-link-color: #000;--global-theme-color: #2698BA;} ",
+					"html[data-theme=dark] {--global-footer-bg-color: #e8e8e8; --global-footer-text-color: #1c1c1d; --global-footer-link-color: #000;--global-theme-color: #2698BA;}",
+
+					"footer.fixed-bottom {padding-top: 0px;height: 5em;margin-bottom: -20px;}",
+
+					".dropdown-menu{ --bs-dropdown-link-hover-bg: #1C1C1D;}",
+
+					"progress {color : #2698BA;}",
+
+					"footer.fixed-bottom a:hover{color: #2698BA;}",
+
+					".post-mysm-title{color: #e8e8e8;}",
+					// ".post-mysm-desp{color: var(--my-sm-tb-color);}",
+					".post-mysm-tags{color: #e8e8e8;}",
+
+
+					
+					
+					// 添加其他样式规则，用逗号隔开
+				];
+
+				// 插入所有的 hover 样式规则
+				for (var i = 0; i < hoverStyles.length; i++) {
+					styleSheet.insertRule(hoverStyles[i], i);
+				}
+
+				var elements = document.getElementsByClassName("card-header d-flex");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #1C1C1D;color : #2698BA;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("card categories");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #1C1C1D;color : #1C1C1D;");
+				// elements[i].style.color = "white";
+				}
+
+
+				var elements = document.getElementsByClassName("text-muted");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "color: #BDBDC3!important;opacity: 0.5;font-size: .6em;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("list-group-item");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #1C1C1D; border: 1px solid #1C1C1D;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("mx-2");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "text-decoration: none; color: #2698BA;");
+				// elements[i].style.color = "white";
+				}
+
+				// var elements = document.getElementsByClassName("fas fa-moon");
+				// // 遍历这些元素并修改属性
+				// for (var i = 0; i < elements.length; i++) {
+				// // 在这里添加您想要修改的属性
+				// 	elements[i].setAttribute("style", "");
+				// // elements[i].style.color = "white";
+				// }
+
+				// var elements = document.getElementsByClassName("fas fa-sun");
+				// // 遍历这些元素并修改属性
+				// for (var i = 0; i < elements.length; i++) {
+				// // 在这里添加您想要修改的属性
+				// 	elements[i].setAttribute("style", "content :\"\\f185\";");
+				// // elements[i].style.color = "white";
+				// }
+
+				
+			}else{
+				document.documentElement.setAttribute("data-theme","light");
+				document.body.style.backgroundColor = "#FFFFFF";
+				document.getElementById("buttonsss").setAttribute("style","  border-bottom: 1px solid #FFFFFF;background-color: #FFFFFF;");
+				// document.getElementById("thisunderlinewqq").classList.add("dark");
+				document.getElementById("thistitlewqq").setAttribute("style","color: #333333");
+				document.getElementById("searchInput").setAttribute("style","background-color: #FFFFFF;  border: 2px solid #B509AC; color: #B509AC;");
+
+				// // 获取包含 label 的父元素
+				// var buttonss = document.getElementById("buttonsss");
+				// var labels = buttonss.getElementsByTagName("label");
+				// // 将所有 label 的颜色设置为随机生成的颜色
+				// for (var i = 0; i < labels.length; i++) {
+				// 	labels[i].setAttribute("style","  -webkit-text-stroke: 1px #2698BA;");
+				// }
+
+				// 创建一个新的 <style> 元素来存储 CSS 样式规则
+				var styleElement = document.createElement("style");
+				document.head.appendChild(styleElement);
+				var styleSheet = styleElement.sheet;
+
+				// 定义 hover 样式规则
+				// var hoverStyle = ".buttonss label:hover {";
+				// hoverStyle += "  opacity: 1;";
+				// hoverStyle += "  filter: drop-shadow(0 0 10px #2698BA) drop-shadow(0 0 20px #2698BA);";
+				// hoverStyle += "}";
+				// // 将 hover 样式规则添加到 <style> 元素中
+				// styleSheet.insertRule(hoverStyle, 0);
+
+				// var hoverStyle2 = ".buttonss label {";
+				// hoverStyle2 += " align-items: center{";
+				// hoverStyle2 += " width: 30%;";
+				// hoverStyle2 += " font-size: 1em;";
+				// hoverStyle2 += " -webkit-text-stroke: 1px #2698BA;";
+				// hoverStyle2 += " color: transparent;";
+				// hoverStyle2 += " opacity: .3;";
+				// hoverStyle2 += " cursor: pointer;";
+				// hoverStyle2 += " transition: .5s;";
+				// hoverStyle2 += "}";
+				// styleSheet.insertRule(hoverStyle2,1);
+				var hoverStyles = [
+					".buttonss label { align-items: center; width: 30%; font-size: 1em; -webkit-text-stroke: 1px #B509AC; color: transparent; opacity: .3; cursor: pointer; transition: .5s;}",
+					".buttonss label:hover { opacity: 1; filter: drop-shadow(0 0 10px #B509AC) drop-shadow(0 0 20px #B509AC); }",
+					".tabs input:nth-child(1):checked ~ .buttonss label:nth-child(1),.tabs input:nth-child(2):checked ~ .buttonss label:nth-child(2),.tabs input:nth-child(3):checked ~ .buttonss label:nth-child(3){color: #B509AC;filter:drop-shadow(0 0 10px #B509AC);}",
+					".underline::before {background-color: #B509AC;}",
+					".underline::after {background-color: #B509AC;}",
+					// ".fas.fa-fw.fa-angle-down:hover{ background-color: #B509AC;}",
+					// ".category-trigger:hover i {  color: #B509AC; }",
+					"@media(hover: hover) {  .category-trigger:hover { background-color: #B509AC; } }",
+					// ".navbar { --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);\
+					// 	--bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);\
+					// 	--bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);\
+					// 	--bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);\
+					// 	--bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);\
+					// 	--bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);\
+					// 	"
+					// ".card-header.d-flex .text-muted{color: #B509AC;}"
+					".fas.fa-moon { display: block;content: \"\\f186\";}",
+					".fas.fa-sun { display: none;content: \"\\f185\";}",
+					" html[data-theme=dark] .fa-sun { display: none;}",
+					"html[data-theme=light] .fa-sun {}",
+					" html[data-theme=dark] .fa-moon { display: block;}",
+					"html[data-theme=light] .fa-moon {}",
+					".navbar{border-bottom: 1px solid rgba(0,0,0,0.1);background-color: #FFF;}",
+
+					".navbar.navbar-light .navbar-nav .nav-item .nav-link:hover{ color: #B509AC;}",
+					".navbar.navbar-light .navbar-nav .nav-item .nav-link{ color: #000000;}",
+					".navbar.navbar-light .navbar-brand {color : #000000;} ",
+
+					".font-weight-bold { color: #000000;}",
+
+					"#light-toggle{ color: #000000;}",
+					"#light-toggle:hover{ color: #B509AC;}",
+					".navbar.navbar-light .navbar-nav .nav-item.active>.nav-link { color: #B509AC;}",
+
+					".navbar .dropdown-menu{ background-color: #ffffff;border: 1px solid rgba(0,0,0,0.1);}",
+					".navbar .dropdown-menu a:not(.active) {color: #000000;}",
+					".dropdown-item:hover{color: #B509AC;}",
+
+					"html[data-theme=dark] { --global-hover-color: #B509AC;}",
+					":root { --global-hover-color: #B509AC;}",
+
+					":root { --global-footer-bg-color: #1c1c1d; --global-footer-text-color: #e8e8e8; --global-footer-link-color: #fff; --global-theme-color: #B509AC;} ",
+					"html[data-theme=dark] {--global-footer-bg-color: #1c1c1d; --global-footer-text-color: #e8e8e8; --global-footer-link-color: #fff; --global-theme-color: #B509AC;}",
+
+					"footer.fixed-bottom {padding-top: 0px;height: 5em;margin-bottom: -20px;}",
+					".dropdown-menu{ --bs-dropdown-link-hover-bg: #FFFFFF;}",
+
+					"progress {color : #B509AC;}",
+
+					"footer.fixed-bottom a:hover{color: #B509AC;}",
+					".post-mysm-title{color: #000;}",
+					// ".post-mysm-desp{color: var(--my-sm-tb-color);}",
+					".post-mysm-tags{color: #000;}",
+					
+					// 添加其他样式规则，用逗号隔开
+				];
+
+				// 插入所有的 hover 样式规则
+				for (var i = 0; i < hoverStyles.length; i++) {
+					styleSheet.insertRule(hoverStyles[i], i);
+				}
+
+				var elements = document.getElementsByClassName("card-header d-flex");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #FFFFFF;color : #B509AC;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("card categories");
+
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #FFFFFF;color : #FFFFFF;");
+				// elements[i].style.color = "white";
+				}
+
+
+				var elements = document.getElementsByClassName("text-muted");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "font-size: .6em;");
+				// elements[i].style.color = "white";color: #B509AC!important;opacity: 0.5;font-size: .6em;
+				}
+
+				var elements = document.getElementsByClassName("list-group-item");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "background-color: #FFFFFF; border: 1px solid #FFFFFF;");
+				// elements[i].style.color = "white";
+				}
+
+				var elements = document.getElementsByClassName("mx-2");
+				// 遍历这些元素并修改属性
+				for (var i = 0; i < elements.length; i++) {
+				// 在这里添加您想要修改的属性
+					elements[i].setAttribute("style", "text-decoration: none; color: #B509AC;");
+				// elements[i].style.color = "white";
+				}
+
+				// var elements = document.getElementsByClassName("fas fa-moon");
+				// // 遍历这些元素并修改属性
+				// for (var i = 0; i < elements.length; i++) {
+				// // 在这里添加您想要修改的属性
+				// 	elements[i].setAttribute("style", "content :\"\\f186\";");
+				// // elements[i].style.color = "white";
+				// }
+
+				// var elements = document.getElementsByClassName("fas fa-sun");
+				// // 遍历这些元素并修改属性
+				// for (var i = 0; i < elements.length; i++) {
+				// // 在这里添加您想要修改的属性
+				// 	elements[i].setAttribute("style", "");
+				// // elements[i].style.color = "white";
+				// }
+
+			}
+		}
+
+        function sendAjaxRequest() {
+		$.ajax({
+			url: "https://124.221.26.185:8001/identify/",
+			type: "post",
+			dataType : 'json',
+			processData: false,
+			contentType: "application/json",
+			cache: false,
+			// async: false,
+			success: function(data){
+				if(data.code==200){
+				}else if(data.code==101){
+					window.location.href="/assets/search/error/update";
+				}else if(data.code==102){
+					window.location.href="/assets/search/error/auth";
+				}
+				else{
+					window.location.href="/assets/search/error/unknown";
+				}
+			},
+			error: function(){
+				window.location.href="/assets/search/error"
+			}	
+		});
+        }
+		$(document).ready(function(){
+			sendAjaxRequest();
+			var sss = document.documentElement.getAttribute("data-theme");
+			if(sss == "dark"){
+				document.documentElement.setAttribute("my-theme","dark");
+			}else{
+				document.documentElement.setAttribute("my-theme","light");
+			}
+			getthemewqq3();
+		});
+    </script>
+
+
+
+
+
+<body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">wen&nbsp;</span>qingqian</a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about</a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories</a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications</a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv</a> </li> <li class="nav-item dropdown active"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">blog<span class="sr-only">(current)</span></a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="/blog/">overview</a> <a class="dropdown-item" href="/assets/search">search</a> </div> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme" onclick="changechangewqq()"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> 
+	<footer class="fixed-bottom"> <div class="container mt-0"> &copy; Copyright 2023 wen qingqian. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?7b30caa5023af4af8408a472dc4e1ebb"></script> <script defer src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script> <script src="/assets/js/no_defer.js?d633890033921b33e0ceb13d22340a9c"></script> <script defer src="/assets/js/common.js?acdb9690d7641b2f8d40529018c71a01"></script> <script defer src="/assets/js/copy_code.js?c9d9dd48933de3831b3ee5ec9c209cac" type="text/javascript"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> <script>var wechatModal=document.getElementById("WeChatMod"),wechatBtn=document.getElementById("WeChatBtn");wechatBtn.onclick=function(){wechatModal.style.display="block"},window.onclick=function(t){t.target==wechatModal&&(wechatModal.style.display="none")};</script>
+
+
+<script src="forsearch.js"></script>
+	<script src="all1.js"></script> 
+	<script src="all2.js"></script> 
+	<script src="all3.js"></script> 
+	<script src="all4.js"></script> 
+	<div class="containerthis">
+		<h1 class="dynamic-title" id="thistitlewqq">Search</h1>
+		<div class="tabs" id="thistabwqq" style="text-align: center;">
+
+		  <div class="buttonss" id="buttonsss" style="text-align: center;">
+
+		  </div>
+		</div>
+	  
+		<div class="search-container">
+		  <input type="text" class="search-box" id="searchInput" onkeydown="iintellsearch()" placeholder="just some keyword">
+		  <div class="dropdown">
+	  
+		  </div>
+		</div>
+	  </div>
+	  <br><br>
+
+
+
+<div class="container-mysm mt-5"> 
+	<div class="post-mysm"> 
+		<ul id="wqq3p" class="post-mysm-list-mysm"> 
+			
+		</ul>
+	</div>
+</div>
+	  <button id="topButton" class="top-button-sscc" onclick="scrollToTop()">
+		<span class="percentage"></span>
+	
+	</button>
+
+<script>
+function changechangewqq(){
+	var sss = document.documentElement.getAttribute("my-theme");
+	if(sss == "dark"){
+		document.documentElement.setAttribute("my-theme","light");
+	}else{
+		document.documentElement.setAttribute("my-theme","dark");
+	}
+	getthemewqq3();
+	// window.location.href = 'a'
+}
+
+function toggleCategory0(){
+	var button = document.getElementById('triggerwqq0');
+	var collapsed = button.classList.contains('collapsed');
+	var header = document.getElementById('h_0');
+	var content = document.getElementById('l_0');
+	var ttt = document.getElementById("triggerthis0");
+	var openf = document.getElementById("folderopenwqq0");
+
+	if (collapsed) {
+		// 如果按钮处于折叠状态，展开它
+		button.classList.remove('collapsed');
+		button.setAttribute('aria-expanded', 'true');
+		header.classList.remove('hide-border-bottom');
+		content.classList.add('show');
+		ttt.classList.remove("rotate")
+		openf.setAttribute('class', 'far fa-folder-open fa-fw');
+	} else {
+		// 如果按钮处于展开状态，折叠它
+		button.classList.add('collapsed');
+		button.setAttribute('aria-expanded', 'false');
+		header.classList.add('hide-border-bottom');
+		content.classList.remove('show');
+		ttt.classList.add("rotate")
+		openf.setAttribute('class', 'far fa-folder fa-fw');
+	}
+}
+function toggleCategory2(){
+	var button = document.getElementById('triggerwqq2');
+	var collapsed = button.classList.contains('collapsed');
+	var header = document.getElementById('h_1');
+	var content = document.getElementById('l_1');
+	var ttt = document.getElementById("triggerthis2");
+	var openf = document.getElementById("folderopenwqq2");
+
+	if (collapsed) {
+		// 如果按钮处于折叠状态，展开它
+		button.classList.remove('collapsed');
+		button.setAttribute('aria-expanded', 'true');
+		header.classList.remove('hide-border-bottom');
+		content.classList.add('show');
+		ttt.classList.remove("rotate")
+		openf.setAttribute('class', 'far fa-folder-open fa-fw');
+	} else {
+		// 如果按钮处于展开状态，折叠它
+		button.classList.add('collapsed');
+		button.setAttribute('aria-expanded', 'false');
+		header.classList.add('hide-border-bottom');
+		content.classList.remove('show');
+		ttt.classList.add("rotate")
+		openf.setAttribute('class', 'far fa-folder fa-fw');
+	}
+}
+
+function toggleCategory3(){
+	var button = document.getElementById('triggerwqq2');
+	var collapsed = button.classList.contains('collapsed');
+	var header = document.getElementById('h_2');
+	var content = document.getElementById('l_2');
+	var ttt = document.getElementById("triggerthis3");
+	var openf = document.getElementById("folderopenwqq3");
+
+	if (collapsed) {
+		// 如果按钮处于折叠状态，展开它
+		button.classList.remove('collapsed');
+		button.setAttribute('aria-expanded', 'true');
+		header.classList.remove('hide-border-bottom');
+		content.classList.add('show');
+		ttt.classList.remove("rotate")
+		openf.setAttribute('class', 'far fa-folder-open fa-fw');
+	} else {
+		// 如果按钮处于展开状态，折叠它
+		button.classList.add('collapsed');
+		button.setAttribute('aria-expanded', 'false');
+		header.classList.add('hide-border-bottom');
+		content.classList.remove('show');
+		ttt.classList.add("rotate")
+		openf.setAttribute('class', 'far fa-folder fa-fw');
+	}
+}
+// 给按钮添加点击事件监听器
+// var button = document.querySelector('.category-trigger');
+// button.addEventListener('click', toggleCategory);
+
+</script>
+
+
+<script>
+	const $notification = $('#notification');
+const $btnRefresh = $('#notification .toast-body>button');
+if ('serviceWorker'in navigator) {
+    /* Registering Service Worker */
+    navigator.serviceWorker.register('/sw.js').then(registration=>{
+        /* in case the user ignores the notification */
+        if (registration.waiting) {
+            $notification.toast('show');
+        }
+        registration.addEventListener('updatefound', ()=>{
+            registration.installing.addEventListener('statechange', ()=>{
+                if (registration.waiting) {
+                    if (navigator.serviceWorker.controller) {
+                        $notification.toast('show');
+                    }
+                }
+            }
+            );
+        }
+        );
+        $btnRefresh.click(()=>{
+            if (registration.waiting) {
+                registration.waiting.postMessage('SKIP_WAITING');
+            }
+            $notification.toast('hide');
+        }
+        );
+    }
+    );
+    let refreshing = false;
+    /* Detect controller change and refresh all the opened tabs */
+    navigator.serviceWorker.addEventListener('controllerchange', ()=>{
+        if (!refreshing) {
+            window.location.reload();
+            refreshing = true;
+        }
+    }
+    );
+}
+
+</script>
+<script>
+	let keepsh = true;
+	let kkkep = false;
+	// JavaScript函数 - 处理搜索
+	function search(event) {
+		console.log(11)
+		$("#wqq3p").html("1111");
+	}
+	
+	// JavaScript函数 - 设置搜索规则
+	function setSearchRule(rule) {
+	  document.querySelector("#searchInput").placeholder = rule;
+	}
+	
+	// JavaScript函数 - 切换下拉菜单显示状态
+	function keepshow() {
+	  keepsh = true;
+	}
+	
+	function closes() {
+	  keepsh = false;
+	  closetoggle();
+	  keepsh = true;
+	}
+	
+	function showtoggle() {
+	  const dropdownContent = document.querySelector(".dropdown-content");
+	  dropdownContent.style.display = "block";
+	}
+	
+	function closetoggle() {
+	  if (keepsh) return;
+	  const dropdownContent = document.querySelector(".dropdown-content");
+	  dropdownContent.style.display = "none";
+	}
+	
+	</script>
+	
+	<script>
+
+		const topButton = document.getElementById("topButton");
+		
+		// 监听页面滚动事件
+		window.addEventListener("scroll", () => {
+			const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+			const windowHeight = document.documentElement.clientHeight || window.innerHeight;
+		
+			// 计算滚动位置的百分比
+			const scrollPercentage = (scrollTop / (scrollHeight - windowHeight)) * 100;
+		
+			// 更新按钮文本
+			$("#topButton").html(`<span class="percentage" style="  font-size: 13px;font-family: Arial, Helvetica, sans-serif;">${Math.round(scrollPercentage)}%</span>
+			<i class="logoarrowup">
+				<svg t="1696593338597" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1586" id="mx_n_1696593338598" width="23" height="23"><path d="M868 545.5L536.1 163c-12.7-14.7-35.5-14.7-48.3 0L156 545.5c-4.5 5.2-0.8 13.2 6 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z" p-id="1587" fill="var(--my-sm-tb-icon-color)"></path></svg>
+			</i>
+			`)
+		
+			if (scrollTop > 20) {
+				topButton.style.display = "block";
+			} else {
+				topButton.style.display = "none";
+			}
+		});
+		
+		// 返回顶部
+		function scrollToTop() {
+		  window.scrollTo({
+			top: 0,
+			behavior: "smooth" // 平滑滚动效果
+		  });
+		}
+		
+		</script>
+
+</body>
+</html>

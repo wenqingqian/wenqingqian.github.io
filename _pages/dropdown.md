@@ -7,6 +7,8 @@ dropdown: true
 children:
     - title: overview
       permalink: /blog/
+    - title: catalog
+      permalink: /assets/search/
     - title: search
-      permalink: /assets/search
+      permalink: /assets/search/intell/
 ---

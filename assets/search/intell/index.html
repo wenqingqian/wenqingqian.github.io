@@ -84,6 +84,7 @@ html[my-theme=dark]{
 	--my-sm-desp-color: #fff;
 	--my-sm-cutline: rgba(255,255,255,.1);
 	--my-sm-dyn-color: #2698BA;
+	--my-sm-postdesp-color: rgba(232,232,232,.5);
 }
 html{
 	--my-sm-tb-color: #000;
@@ -94,6 +95,7 @@ html{
 	--my-sm-desp-color: #828282;
 	--my-sm-cutline: rgba(0,0,0,.1);
 	--my-sm-dyn-color: #B509AC;
+	--my-sm-postdesp-color: #000;
 }
 
 .container-mysm {
@@ -170,6 +172,7 @@ html{
 
 .top-button-sscc .percentage {
   display: block;
+  color: var(--my-sm-tb-color);
 }
 
 .top-button-sscc:hover .percentage {
@@ -186,7 +189,7 @@ html{
   margin-left: 5px;
 }
 .post-mysm-desp{
-	color: var(--my-sm-tb-color);
+	color: var(--my-sm-postdesp-color);
 	transition: .3s;
 }
 

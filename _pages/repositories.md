@@ -13,7 +13,7 @@ nav_order: 2
     {% include repository/repo_user.html username=user %}
   {% endfor %}
 </div>
-
+{% endif %}
 ---
 
 {% if site.data.repositories.github_repos %}

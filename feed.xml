@@ -1,4 +1,624 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://wenqingqian.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://wenqingqian.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2023-10-07T06:58:45+00:00</updated><id>https://wenqingqian.github.io/feed.xml</id><title type="html">blank</title><subtitle>notethis description on _config.yml A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">test my blog</title><link href="https://wenqingqian.github.io/blog/2023/ttestt/" rel="alternate" type="text/html" title="test my blog"/><published>2023-10-03T15:59:00+00:00</published><updated>2023-10-03T15:59:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/ttestt</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/ttestt/"><![CDATA[<p>sd</p> <h2 id="sd">sd</h2> <p>sd</p> <h2 id="sds">sds</h2> <h3 id="sdf">sdf</h3> <p>sd</p> <p>sd</p> <h4 id="sd-1">sd</h4> <p>sd</p> <h4 id="sd-2">sd</h4> <p>sd</p> <h3 id="sd-3">sd</h3> <h3 id="sdsd">sdsd</h3> <p>中文测试,标点</p>]]></content><author><name></name></author><category term="nettest"/><category term="testtag"/><summary type="html"><![CDATA[description test]]></summary></entry><entry><title type="html">a post with bibliography</title><link href="https://wenqingqian.github.io/blog/2023/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography"/><published>2023-07-12T13:56:00+00:00</published><updated>2023-07-12T13:56:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/post-bibliography</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="bib"/><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="https://wenqingqian.github.io/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook"/><published>2023-07-04T12:57:00+00:00</published><updated>2023-07-04T12:57:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/jupyter-notebook</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://wenqingqian.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://wenqingqian.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2023-10-07T14:48:27+00:00</updated><id>https://wenqingqian.github.io/feed.xml</id><title type="html">blank</title><subtitle>notethis description on _config.yml A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">test my blog</title><link href="https://wenqingqian.github.io/blog/2023/ttestt/" rel="alternate" type="text/html" title="test my blog"/><published>2023-10-03T15:59:00+00:00</published><updated>2023-10-03T15:59:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/ttestt</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/ttestt/"><![CDATA[<p>sd</p> <h2 id="sd">sd</h2> <p>sd</p> <h2 id="sds">sds</h2> <h3 id="sdf">sdf</h3> <p>sd</p> <p>sd</p> <h4 id="sd-1">sd</h4> <p>sd</p> <h4 id="sd-2">sd</h4> <p>sd</p> <h3 id="sd-3">sd</h3> <h3 id="sdsd">sdsd</h3> <p>中文测试,标点</p>]]></content><author><name></name></author><category term="nettest"/><category term="testtag"/><summary type="html"><![CDATA[description test]]></summary></entry><entry><title type="html">lua syntax doc</title><link href="https://wenqingqian.github.io/blog/2023/lua-syntax-tutorial/" rel="alternate" type="text/html" title="lua syntax doc"/><published>2023-08-19T09:49:00+00:00</published><updated>2023-08-19T09:49:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/lua-syntax-tutorial</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/lua-syntax-tutorial/"><![CDATA[<p><u>All example base on lua5.3</u></p> <h2 id="syntax">syntax</h2> <h3 id="data-type">data type</h3> <blockquote> <p>All values in Lua are <em>first-class values</em>. This means that all values can be stored in variables, passed as arguments to other functions, and returned as results.</p> </blockquote> <ol> <li> <p>boolean</p> </li> <li> <p>number</p> </li> </ol> <p>​ Represent both integer and real(floating-point) numbers</p> <ol> <li> <p>string</p> <ul> <li>Represent immutable sequences of bytes</li> <li>Strings can contain any 8-bit value, including embedded zeros(‘\0’)</li> <li>It makes no assumptions about the contents of a string</li> <li>The raw string can be represented by using double brackets like … , it starts with two consecutive left brackets, and end with the first encounter of two consecutive right brackets(use ‘\]\]’ to represent if its not the end) or use “[=[]=]”(end with first encounter of “]=]”) <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">str</span> <span class="o">=</span> <span class="s">[[\t\n\r\\'']]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="c1">-- str = \t\n\r\\''</span>
+<span class="kd">local</span> <span class="n">str</span> <span class="o">=</span> <span class="s">[[[[]-]-]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="c1">-- str = [[]-]-</span>
+<span class="kd">local</span> <span class="n">str</span> <span class="o">=</span> <span class="s">[=[.[][]]].]=]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="c1">-- str = .[][]]].</span>
+</code></pre></div> </div> </li> </ul> </li> <li> <p>nil</p> <p>The type <strong>nil</strong> has only single value, <strong>nil</strong>, whose main property is to be different from any other value</p> <p>Both <strong>nil</strong> and <strong>false</strong> make a condition false while any other value makes it true</p> </li> <li> <p>function</p> </li> <li> <p>table</p> <p>The type table implements associative arrays</p> <p>The value with no explicit indicated index will be assigned an auto-incremented value from 1 as index by default like</p> <p>It calls <strong>non-natural</strong> key</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">local</span> <span class="n">tab</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="kc">nil</span><span class="p">}</span>
+ <span class="nb">table.insert</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+ <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="k">do</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+ <span class="k">end</span>
+ <span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">tab</span><span class="p">,</span><span class="n">tab</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">tab</span><span class="p">[</span><span class="s2">"i"</span><span class="p">],</span><span class="n">tab</span><span class="p">.</span><span class="n">i</span><span class="p">,</span><span class="n">tab</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span>
+ <span class="cm">--[[
+ 1       1
+ 2       2
+ i       3
+ 3       4
+    
+ 3       4       3       3       nil
+ #tab	tab[3]	tab["i"]tab.i	tab[100]
+ ]]</span>
+</code></pre></div> </div> <p>Represent the <strong>natural</strong> key value first</p> <blockquote> <p>Any key with value <strong>nil</strong> is not considered part of the table. Conversely, any key that is not part of a table has an associated value <strong>nil</strong>.</p> </blockquote> </li> <li> <p>thread</p> <p>Coroutine</p> </li> <li> <p>userdata</p> </li> </ol> <ul> <li> <p>Cant compare between different type</p> </li> <li> <p>Table, <del>function</del>, thread, and (full) user data values are objects: variables do not actually contain these values but only references to them which means assignment, parameter passing and function returns always manipulate references to such values and dont imply any kind of copy like</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">tab</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="kd">local</span> <span class="n">tab2</span><span class="o">=</span> <span class="n">tab</span>
+<span class="n">tab2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">table.unpack</span><span class="p">(</span><span class="n">tab</span><span class="p">))</span>
+<span class="c1">--2,2</span>
+  
+<span class="kd">local</span> <span class="n">tab</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="kd">local</span> <span class="n">tab2</span><span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="n">tab</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tab2</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">tab</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tab2</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1">-- 1,2</span>
+  
+<span class="c1">--BUT</span>
+<span class="kd">local</span> <span class="n">tab</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="kd">local</span> <span class="n">tab2</span><span class="o">=</span> <span class="n">tab</span>
+<span class="n">tab2</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span> <span class="c1">-- it point to new table, maybe like rvalue reference</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">table.unpack</span><span class="p">(</span><span class="n">tab</span><span class="p">))</span>
+<span class="c1">--1,2 </span>
+</code></pre></div> </div> </li> </ul> <h3 id="operator">operator</h3> <h4 id="bitwise-operators">Bitwise Operators</h4> <h4 id="relational-operators">Relational Operators</h4> <p>Lua supports the following relational operators:</p> <ul> <li><strong><code class="language-plaintext highlighter-rouge">==</code>:</strong> equality</li> <li><strong><code class="language-plaintext highlighter-rouge">~=</code>:</strong> inequality</li> <li><strong><code class="language-plaintext highlighter-rouge">&lt;</code>:</strong> less than</li> <li><strong><code class="language-plaintext highlighter-rouge">&gt;</code>:</strong> greater than</li> <li><strong><code class="language-plaintext highlighter-rouge">&lt;=</code>:</strong> less or equal</li> <li><strong><code class="language-plaintext highlighter-rouge">&gt;=</code>:</strong> greater or equal</li> </ul> <p>These operators always result in <strong>false</strong> or <strong>true</strong></p> <p>Equality (<code class="language-plaintext highlighter-rouge">==</code>) first compares the type of its operands. If the types are different, then the result is <strong>false</strong></p> <p>Besides equality and inequality operators, cant compare between different type</p> <p>Table, userdata, and thread are compared by reference (if they point to the same object)</p> <h4 id="logical-operators">Logical Operators</h4> <ul> <li> <p><strong>not</strong></p> <p>if <strong>true</strong> return <strong>false</strong></p> <p>if <strong>false</strong> return <strong>true</strong></p> </li> <li> <p><strong>and</strong></p> <p><u>both **and** and **or** return one of these tow operands</u></p> <p>a and b : return first <strong>false</strong> operands or the <strong>b</strong></p> <ol> <li> <p>if <strong>a</strong> == <strong>false</strong> , return <strong>a</strong> , (that is <strong>false</strong>)</p> </li> <li> <p>if <strong>a</strong> == <strong>true</strong> , return <strong>b</strong> , (it can be anything)</p> </li> </ol> </li> <li> <p><strong>or</strong></p> <p>a or b : return first <strong>true</strong> operands or <strong>b</strong></p> <ol> <li> <p>if <strong>a</strong> == <strong>true</strong> , return <strong>a</strong> , (anything besides false and nil)</p> </li> <li> <p>if <strong>a</strong> == <strong>false</strong> , return <strong>b</strong> , (it can be anything)</p> </li> </ol> </li> </ul> <p>This feature can help to achieve ternary operator</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- a?b:c</span>
+<span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="n">c</span>
+</code></pre></div></div> <ol> <li><strong>a</strong> == <strong>false</strong> return <strong>c</strong> <ul> <li>if <strong>a</strong> == <strong>false</strong> , (a and b) return <strong>a</strong> = <strong>false</strong>(rule 1)</li> </ul> </li> </ol> <ul> <li>if <strong>(a and b)</strong> == <strong>false</strong> return <strong>c</strong> (rule 4) <ol> <li><strong>a</strong> == <strong>true</strong> return <strong>b</strong></li> </ol> <ul> <li>if <strong>a</strong> == <strong>true</strong> , return <strong>b</strong> (rule 2)</li> <li>if <strong>(a and b)</strong> == <strong>true</strong> , return <strong>(a and b)</strong> = <strong>b</strong> (rule 3)</li> </ul> </li> </ul> <p>In the second case ,it need to make sure if <strong>a</strong> == <strong>true</strong> then <strong>(a and b)</strong> = <strong>b</strong> = <strong>true</strong></p> <p>So we need to wrap <strong>b</strong> into something absolutely <strong>true</strong> like a object</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">((</span><span class="n">a</span> <span class="ow">and</span> <span class="p">{</span><span class="n">b</span><span class="p">})</span> <span class="ow">or</span> <span class="p">{</span><span class="n">c</span><span class="p">})[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div> <p><strong>c</strong> was wrapped too to make a uniform format</p> <p><u>**false** represent logical false, not boolean false, both boolean false and nil represent logical false but false ~= nil</u></p> <h4 id="length-operators">Length Operators</h4> <p>The length of a string is its number of bytes</p> <blockquote> <p>The length operator applied on a table returns a border in that table. A <em>border</em> in a table <code class="language-plaintext highlighter-rouge">t</code> is any natural number that satisfies the following condition:</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">border</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">t</span><span class="p">[</span><span class="n">border</span><span class="p">]</span> <span class="o">~=</span> <span class="kc">nil</span><span class="p">)</span> <span class="ow">and</span> <span class="n">t</span><span class="p">[</span><span class="n">border</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span>
+</code></pre></div> </div> <p>In words, a border is any (natural) index in a table where a non-nil value is followed by a nil value (or zero, when index 1 is nil). A table with exactly one border is called a <strong>sequence</strong>.</p> <p>For instance, the table <code class="language-plaintext highlighter-rouge">{10, 20, 30, 40, 50}</code> is a sequence, as it has only one border (5). The table <code class="language-plaintext highlighter-rouge">{10, 20, 30, nil, 50}</code> has two borders (3 and 5), and therefore it is not a sequence. The table <code class="language-plaintext highlighter-rouge">{nil, 20, 30, nil, nil, 60, nil}</code> has three borders (0, 3, and 6), so it is not a sequence, too. The table <code class="language-plaintext highlighter-rouge">{}</code> is a sequence with border 0.</p> <p><strong>Note that non-natural keys do not interfere with whether a table is a sequence.</strong></p> <p>When <code class="language-plaintext highlighter-rouge">t</code> is a sequence, <code class="language-plaintext highlighter-rouge">#t</code> returns its only border, which corresponds to the intuitive notion of the length of the sequence. When <code class="language-plaintext highlighter-rouge">t</code> is not a sequence, <code class="language-plaintext highlighter-rouge">#t</code> can return any of its borders.</p> <p>(The exact one depends on details of the internal representation of the table, which in turn can depend on how the table was populated and the memory addresses of its non-numeric keys.)</p> </blockquote> <p>experiment</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tab</span> <span class="o">=</span> <span class="p">{</span><span class="kc">nil</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">},</span><span class="mi">2</span><span class="p">,</span><span class="kc">nil</span><span class="p">,</span><span class="kc">nil</span><span class="p">,</span><span class="kc">nil</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">#</span><span class="n">tab</span><span class="p">)</span>
+<span class="c1">-- 4</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="o">#</span><span class="n">tab</span> <span class="k">do</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="k">end</span>
+<span class="cm">--[[
+nil
+0
+1
+2
+]]</span>
+</code></pre></div></div> <p><strong>#</strong> count all the natural index value include the <strong>nil</strong> before last natural index value, to make sure it can use number between 1 and <strong>#</strong> as index</p> <p>Like this, the last natural index value is <strong>2</strong> , and 4 value was counted include the first <strong>nil</strong>, as the quote say, its border contain 0 and 4</p> <h3 id="function">function</h3> <h4 id="overload">overload</h4> <p>Lua dont support function <strong>overload</strong> directly besides <strong>metatable</strong>, the same function name means <strong>override</strong></p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">-- 1 nil</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">-- 1</span>
+</code></pre></div></div> <h4 id="parameter">parameter</h4> <blockquote> <p>When a function is called, the list of arguments is adjusted to the length of the list of parameters</p> </blockquote> <p>like</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="c1">-- 1   nil  nil</span>
+<span class="c1">-- 1   2    3</span>
+
+<span class="c1">--or</span>
+<span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span>
+<span class="k">end</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1">-- same as above</span>
+<span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="p">)</span>
+<span class="c1">-- 1</span>
+</code></pre></div></div> <p>operator <strong>()</strong> maybe like</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span>
+<span class="k">end</span>
+</code></pre></div></div> <h4 id="vararg">vararg</h4> <blockquote> <p>vararg is indicated by three dots (‘<code class="language-plaintext highlighter-rouge">...</code>’) at the end of its parameter list. A vararg function does not adjust its argument list; instead, it collects all extra arguments and supplies them to the function through a <em>vararg expression</em></p> </blockquote> <p>some method to deal with “…”</p> <ol> <li> <p>select api</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="s2">"#"</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+ <span class="k">end</span>
+ <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+ <span class="cm">--[[
+ 2
+ 1   2
+ 2
+ ]]</span>
+    
+ <span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="s2">"#"</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">...</span><span class="p">))</span>
+ <span class="k">end</span>
+ <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+ <span class="cm">--[[
+ 2
+ 2   3
+ 3
+ ]]</span>
+    
+ <span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+     <span class="n">count</span> <span class="o">=</span> <span class="nb">select</span><span class="p">(</span><span class="s2">"#"</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">count</span> <span class="k">do</span>
+         <span class="nb">print</span><span class="p">(</span> <span class="p">(</span><span class="nb">select</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="o">...</span><span class="p">))</span> <span class="p">)</span>
+     <span class="k">end</span>
+ <span class="k">end</span>
+ <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+ <span class="cm">--[[
+ 1
+ 2
+ 3
+ ]]</span>
+</code></pre></div> </div> </li> <li> <p>pack</p> <p>Warp the <em>vararg</em> into a table and supply extra <strong>n</strong> to represent length</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+     <span class="n">t</span> <span class="o">=</span> <span class="nb">table.pack</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+ 	<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">do</span>
+ 		<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+ 	<span class="k">end</span>
+     <span class="nb">print</span><span class="p">(</span><span class="nb">table.unpack</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+ <span class="k">end</span>
+ <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+ <span class="cm">--[[
+ 1       1
+ 2       2
+ 3       3
+ n       3
+ 1       2       3
+ ]]</span>
+    
+ <span class="nb">table.pack</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+ <span class="nb">table.unpack</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+    
+ <span class="n">t</span> <span class="o">=</span> <span class="nb">table.pack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+ <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="nb">table.unpack</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div> </div> <p>Unpack return the element from the given list from l to r</p> </li> <li> <p>{…}</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+     <span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span> <span class="c1">-- table , length = #t</span>
+     <span class="c1">-- as same as table.pack(...) besides extra k-v n:#length</span>
+ <span class="k">end</span>
+</code></pre></div> </div> </li> </ol> <h4 id="closure">closure</h4> <p>When Lua precompiles a chunk, all its function bodies are precompiled too. Then, whenever Lua executes the function definition, the function is <em>closed</em>. This function <em>closure</em> is the final value of the expression</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span> <span class="c1">-- make it static</span>
+    <span class="k">return</span> <span class="k">function</span><span class="p">()</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">f</span><span class="p">()</span>
+<span class="n">t</span><span class="p">()</span>  <span class="c1">-- 1</span>
+<span class="n">t</span><span class="p">()</span>  <span class="c1">-- 2</span>
+
+<span class="n">h</span><span class="o">=</span><span class="n">f</span><span class="p">()</span>
+<span class="n">h</span><span class="p">()</span>  <span class="c1">-- 1</span>
+<span class="n">h</span><span class="p">()</span>  <span class="c1">-- 2</span>
+</code></pre></div></div> <h4 id="iterator">iterator</h4> <p>The generic <strong>for</strong> statement works over functions, called <em>iterators</em>.</p> <p>The generic <strong>for</strong> loop has the following syntax:</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">var1</span><span class="p">,</span><span class="n">var2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">varn</span> <span class="k">in</span> <span class="k">function</span><span class="p">()</span> <span class="k">do</span>
+</code></pre></div></div> <p>On each iteration, the iterator function is called to produce a new value, stopping when this new value is <strong>nil</strong>.</p> <p>Note: only stop when the first value <strong>var1</strong> is <strong>nil</strong></p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- stop</span>
+<span class="k">function</span> <span class="nf">f</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="k">function</span><span class="p">()</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">((</span> <span class="n">index</span><span class="o">&gt;</span><span class="mi">2</span> <span class="ow">and</span> <span class="p">{</span><span class="kc">nil</span><span class="p">}</span> <span class="p">)</span> <span class="ow">or</span> <span class="p">{</span><span class="n">index</span><span class="p">})[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">f</span><span class="p">()</span> <span class="k">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="cm">--[[
+1
+2
+]]</span>
+<span class="c1">-- pairs implement</span>
+<span class="c1">-- ipairs implement</span>
+<span class="k">function</span> <span class="nf">m_ipairs</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="k">function</span> <span class="p">()</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="k">if</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="o">#</span><span class="n">tab</span> <span class="k">then</span>
+			<span class="k">return</span>
+		<span class="k">end</span>
+        <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">tab</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">tab</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="kc">nil</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="n">m_ipairs</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="k">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="cm">--[[
+1       1
+2       2
+3       3
+4       nil
+5       4
+]]</span>
+<span class="k">function</span> <span class="nf">m_ipairs</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="k">function</span> <span class="p">()</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="k">if</span> <span class="n">index</span> <span class="o">&gt;</span> <span class="o">#</span><span class="n">tab</span> <span class="ow">or</span> <span class="n">tab</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">then</span>
+			<span class="k">return</span>
+		<span class="k">end</span>
+        <span class="k">return</span> <span class="n">index</span><span class="p">,</span> <span class="n">tab</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">tab</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="kc">nil</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="n">m_ipairs</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="k">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="cm">--[[
+1       1
+2       2
+3       3
+]]</span>
+</code></pre></div></div> <h2 id="orient-object">orient-object</h2> <h3 id="metatable">metatable</h3> <blockquote> <p><em>metatable</em> is an ordinary Lua table that defines the behavior of the original value under certain special operations</p> </blockquote> <p>We can overload the operation by set a metatable and define the metamethod below</p> <ul> <li> <p><strong><code class="language-plaintext highlighter-rouge">__add</code>:</strong> the addition (<code class="language-plaintext highlighter-rouge">+</code>) operation. If any operand for an addition is not a <u>number (nor a string coercible to a number)</u>, Lua will try to call a metamethod</p> <p>First, Lua will check the first operand .</p> <p>If that operand does not define a metamethod for <code class="language-plaintext highlighter-rouge">__add</code>, then Lua will check the second operand.</p> <p>If Lua can find a metamethod, it calls the metamethod with the two operands as arguments, and the result of the call (adjusted to one value) is the result of the operation.</p> <p>Otherwise, it raises an error.</p> <p>And these below are similar to addition operation</p> <ul> <li><strong><code class="language-plaintext highlighter-rouge">__sub</code>:</strong> the subtraction (<code class="language-plaintext highlighter-rouge">-</code>) operation.</li> <li><strong><code class="language-plaintext highlighter-rouge">__mul</code>:</strong> the multiplication (<code class="language-plaintext highlighter-rouge">*</code>) operation.</li> <li><strong><code class="language-plaintext highlighter-rouge">__div</code>:</strong> the division (<code class="language-plaintext highlighter-rouge">/</code>) operation.</li> <li><strong><code class="language-plaintext highlighter-rouge">__mod</code>:</strong> the modulo (<code class="language-plaintext highlighter-rouge">%</code>) operation.</li> <li><strong><code class="language-plaintext highlighter-rouge">__pow</code>:</strong> the exponentiation (<code class="language-plaintext highlighter-rouge">^</code>) operation.</li> <li><strong><code class="language-plaintext highlighter-rouge">__unm</code>:</strong> the negation (unary <code class="language-plaintext highlighter-rouge">-</code>) operation.</li> <li><strong><code class="language-plaintext highlighter-rouge">__idiv</code>:</strong> the floor division (<code class="language-plaintext highlighter-rouge">//</code>) operation.</li> </ul> <p>The result of the call is always converted to a boolean</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__band</code>:</strong> the bitwise AND (<code class="language-plaintext highlighter-rouge">&amp;</code>) operation. Behavior similar to the addition operation, if any operand is <u>neither an integer nor a value coercible to an integer</u></p> <ul> <li> <p><strong><code class="language-plaintext highlighter-rouge">__bor</code>:</strong> the bitwise OR (<code class="language-plaintext highlighter-rouge">|</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__bxor</code>:</strong> the bitwise exclusive OR (binary <code class="language-plaintext highlighter-rouge">~</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__bnot</code>:</strong> the bitwise NOT (unary <code class="language-plaintext highlighter-rouge">~</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__shl</code>:</strong> the bitwise left shift (<code class="language-plaintext highlighter-rouge">&lt;&lt;</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__shr</code>:</strong> the bitwise right shift (<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__concat</code>:</strong> the concatenation (<code class="language-plaintext highlighter-rouge">..</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__len</code>:</strong> the length (<code class="language-plaintext highlighter-rouge">#</code>) operation.</p> <p>If the object is not a string, Lua will try its metamethod with the object as argument, and the result of the call (always adjusted to one value) is the result of the operation.</p> <p>If there is no metamethod but the object is a table, then Lua uses the table length operation. Otherwise, Lua raises an error.</p> </li> </ul> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__eq</code>:</strong> the equal (<code class="language-plaintext highlighter-rouge">==</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__lt</code>:</strong> the less than (<code class="language-plaintext highlighter-rouge">&lt;</code>) operation.</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__le</code>:</strong> the less equal (<code class="language-plaintext highlighter-rouge">&lt;=</code>) operation.</p> <blockquote> <p>Unlike other operations, the less-equal operation can use two different events. First, Lua looks for the <code class="language-plaintext highlighter-rouge">__le</code> metamethod in both operands, like in the less than operation. If it cannot find such a metamethod, then it will try the <code class="language-plaintext highlighter-rouge">__lt</code> metamethod, assuming that <code class="language-plaintext highlighter-rouge">a &lt;= b</code> is equivalent to <code class="language-plaintext highlighter-rouge">not (b &lt; a)</code>.</p> </blockquote> </li> </ul> <p>like</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">local</span> <span class="n">meta</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">__add</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">tab1</span><span class="p">,</span><span class="n">tab2</span><span class="p">)</span>
+		<span class="c1">-- as mentioned above, if you modify tab1/2 here, t1/2 will be modify</span>
+		<span class="c1">-- assuming table is an array and same length</span>
+		<span class="kd">local</span> <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">tab1</span> <span class="k">do</span>
+			<span class="nb">table.insert</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">tab1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">tab2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="k">end</span>
+		<span class="k">return</span> <span class="n">res</span>
+	<span class="k">end</span>
+<span class="p">}</span>
+
+<span class="kd">local</span> <span class="n">t1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="kd">local</span> <span class="n">t2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">meta</span><span class="p">)</span>
+<span class="c1">-- or setmetatable(t2,meta)</span>
+<span class="c1">-- it will check both operands if one of them have metamethod</span>
+<span class="kd">local</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">+</span> <span class="n">t2</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span> <span class="k">do</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="c1">-- 1       2</span>
+<span class="c1">-- 2       4</span>
+<span class="c1">-- 3       6</span>
+<span class="n">meta</span><span class="p">.</span><span class="n">__sub</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">tab1</span><span class="p">,</span><span class="n">tab2</span><span class="p">)</span>
+	<span class="kd">local</span> <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">tab1</span> <span class="k">do</span>
+		<span class="nb">table.insert</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">tab1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">tab2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="k">end</span>
+	<span class="k">return</span> <span class="n">res</span>
+<span class="k">end</span>
+<span class="kd">local</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t2</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span> <span class="k">do</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="c1">-- 1       0</span>
+<span class="c1">-- 2       0</span>
+<span class="c1">-- 3       0</span>
+</code></pre></div></div> <p>And threee fundamental metamethod below</p> <ul> <li> <p><strong><code class="language-plaintext highlighter-rouge">__index</code></strong></p> <p>The indexing access operation <code class="language-plaintext highlighter-rouge">table[key]</code></p> <p>When <code class="language-plaintext highlighter-rouge">key</code> is not present in <code class="language-plaintext highlighter-rouge">table</code>, then search in the __index in metatable</p> <p>If __index is a funcion , it is called with <code class="language-plaintext highlighter-rouge">table</code> and <code class="language-plaintext highlighter-rouge">key</code> as arguments, and result of the call (adjusted to one value) is the result of <code class="language-plaintext highlighter-rouge">table[key]</code></p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">local</span> <span class="n">son</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">}</span>
+    
+  <span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+      <span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+  	<span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+  	<span class="n">d</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+  <span class="p">}</span>
+  <span class="kd">local</span> <span class="n">father</span> <span class="o">=</span> <span class="p">{</span>
+  	<span class="c1">-- __index = {</span>
+  	<span class="c1">-- 	c = 3,</span>
+  	<span class="c1">-- 	d = 4</span>
+  	<span class="c1">-- }</span>
+  	<span class="n">__index</span> <span class="o">=</span> <span class="n">index</span>
+  <span class="p">}</span>
+  <span class="nb">setmetatable</span><span class="p">(</span><span class="n">son</span><span class="p">,</span> <span class="n">father</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">son</span><span class="p">.</span><span class="n">a</span><span class="p">)</span> <span class="c1">-- 1</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">son</span><span class="p">.</span><span class="n">c</span><span class="p">)</span> <span class="c1">-- 3</span>
+  <span class="nb">print</span><span class="p">(</span> <span class="nb">rawget</span><span class="p">(</span><span class="n">son</span><span class="p">,</span><span class="s2">"d"</span><span class="p">)</span> <span class="p">)</span> <span class="c1">-- nil</span>
+</code></pre></div> </div> <p>And in other word, it’s the implementation of derive in Lua</p> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__newindex</code></strong></p> <p>The indexing assignment <code class="language-plaintext highlighter-rouge">table[key] = value</code></p> <p>When <code class="language-plaintext highlighter-rouge">key</code> is not present in <code class="language-plaintext highlighter-rouge">table</code>, and it has a metatable with metamethod __newindex , the value will be wrote in __newindex</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">local</span> <span class="n">son</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">}</span>
+    
+  <span class="kd">local</span> <span class="n">index</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="kd">local</span> <span class="n">father</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">__newindex</span> <span class="o">=</span> <span class="n">index</span>
+  <span class="p">}</span>
+  <span class="nb">setmetatable</span><span class="p">(</span><span class="n">son</span><span class="p">,</span> <span class="n">father</span><span class="p">)</span>
+    
+  <span class="n">son</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span><span class="o">=</span><span class="mi">3</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">son</span><span class="p">.</span><span class="n">c</span><span class="p">)</span>    <span class="c1">-- nil</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">.</span><span class="n">c</span><span class="p">)</span>  <span class="c1">-- 3</span>
+  <span class="c1">--</span>
+    
+  <span class="n">father</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">index</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">son</span><span class="p">.</span><span class="n">c</span><span class="p">)</span>    <span class="c1">-- 3</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">.</span><span class="n">c</span><span class="p">)</span>  <span class="c1">-- 3</span>
+</code></pre></div> </div> <p>If __newindex is a funcion , it is called with <code class="language-plaintext highlighter-rouge">table</code> , <code class="language-plaintext highlighter-rouge">key</code> and <code class="language-plaintext highlighter-rouge">value</code> as arguments, and __newindex can call another metamethod</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">father</span><span class="p">.</span><span class="n">__newindex</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+      <span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">v</span>
+  <span class="k">end</span>
+  <span class="n">son</span><span class="p">[</span><span class="s2">"d"</span><span class="p">]</span><span class="o">=</span><span class="mi">4</span>
+  <span class="c1">-- stack overflow</span>
+  <span class="c1">-- call son["d"]=4 =&gt; father.__newindex(son,d,4)</span>
+  <span class="c1">--   =&gt; son["d"]=4 =&gt; father.__newindex(son,d,4)</span>
+  <span class="c1">--   ...</span>
+  <span class="n">father</span><span class="p">.</span><span class="n">__newindex</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+      <span class="nb">rawset</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="n">son</span><span class="p">[</span><span class="s2">"d"</span><span class="p">]</span><span class="o">=</span><span class="mi">4</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">son</span><span class="p">.</span><span class="n">d</span><span class="p">)</span>   <span class="c1">-- 4</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">.</span><span class="n">d</span><span class="p">)</span> <span class="c1">-- nil</span>
+</code></pre></div> </div> </li> <li> <p><strong><code class="language-plaintext highlighter-rouge">__call</code></strong></p> <p>The call operation <code class="language-plaintext highlighter-rouge">func(args)</code></p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">father</span><span class="p">.</span><span class="n">__call</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+  	<span class="n">t</span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="n">a</span>
+  	<span class="n">t</span><span class="p">.</span><span class="n">b</span><span class="o">=</span><span class="n">b</span>
+  <span class="k">end</span>
+  <span class="n">son</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">son</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="n">son</span><span class="p">.</span><span class="n">b</span><span class="p">)</span> <span class="c1">-- 3  4</span>
+</code></pre></div> </div> </li> </ul> <h3 id="method">method</h3> <p>A call <code class="language-plaintext highlighter-rouge">v:name(args)</code> is syntactic sugar for <code class="language-plaintext highlighter-rouge">v.name(v,args)</code>, except that <code class="language-plaintext highlighter-rouge">v</code> is evaluated only once</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">getId</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">t</span><span class="p">.</span><span class="n">id</span>
+    <span class="k">end</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">getId</span><span class="p">())</span>
+
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t</span>
+<span class="n">t</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">getId</span><span class="p">())</span> <span class="c1">-- nil</span>
+<span class="cm">--[[
+t  ---&gt; | id = 1            |
+t2 ---&gt; | getId: return t.id|
+
+t  -X-&gt; | id = 1            |
+t2 ---&gt; | getId: return t.id|
+						^
+]]</span>
+</code></pre></div></div> <p>with obj or self</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t2</span><span class="p">.</span><span class="n">getIdObj</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">id</span>
+<span class="k">end</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">.</span><span class="n">getIdObj</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span> <span class="c1">-- 1</span>
+
+<span class="k">function</span> <span class="nf">t2</span><span class="p">:</span><span class="n">getIdSelf</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">id</span>
+<span class="k">end</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">:</span><span class="n">getIdSelf</span><span class="p">())</span>  <span class="c1">-- 1</span>
+
+<span class="n">t3</span> <span class="o">=</span> <span class="n">t2</span> 
+<span class="n">t2</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t3</span><span class="p">.</span><span class="n">getIdObj</span><span class="p">(</span><span class="n">t3</span><span class="p">))</span> <span class="c1">-- 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t3</span><span class="p">:</span><span class="n">getIdSelf</span><span class="p">())</span>  <span class="c1">-- 1</span>
+</code></pre></div></div> <h3 id="derive">derive</h3> <p>Through the above method, we achieved a part of <strong>inherence</strong></p> <p>Next remove the redundant tables through <strong>self-index</strong></p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">base</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="nb">print</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">do</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+<span class="p">}</span>
+<span class="n">base</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">base</span> <span class="c1">-- self-index</span>
+
+<span class="n">tab1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">tab2</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">tab1</span><span class="p">,</span><span class="n">base</span><span class="p">)</span>
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">tab2</span><span class="p">,</span><span class="n">base</span><span class="p">)</span>
+
+<span class="n">tab1</span><span class="p">:</span><span class="nb">print</span><span class="p">()</span>
+<span class="c1">-- 1       1</span>
+<span class="c1">-- 2       2</span>
+<span class="c1">-- 3       3</span>
+<span class="n">tab2</span><span class="p">:</span><span class="nb">print</span><span class="p">()</span>
+<span class="c1">-- a       1</span>
+<span class="c1">-- b       2</span>
+<span class="c1">-- c       3</span>
+</code></pre></div></div> <p>Its order of execution is</p> <ol> <li>Search the <code class="language-plaintext highlighter-rouge">print</code> in tab1/2 and it’s missing</li> <li>Search its metatable’s __index <code class="language-plaintext highlighter-rouge">base.__index</code>, that is itself</li> <li>Search <code class="language-plaintext highlighter-rouge">base</code> and get the <code class="language-plaintext highlighter-rouge">print</code></li> </ol> <p>So if step 3 fails , it will try to search its upper metatable , the metatable of <code class="language-plaintext highlighter-rouge">base</code></p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">basebase</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">id</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="n">basebase</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">basebase</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nb">print</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">do</span>
+			<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+<span class="p">}</span>
+<span class="n">base</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">base</span>
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">base</span><span class="p">,</span><span class="n">basebase</span><span class="p">)</span>
+
+<span class="n">tab1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">tab2</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">3</span><span class="p">}</span>
+
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">tab1</span><span class="p">,</span><span class="n">base</span><span class="p">)</span>
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">tab2</span><span class="p">,</span><span class="n">base</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tab1</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="c1">-- 1</span>
+
+<span class="c1">-- its key is that to setmetatable(base.__index, basebase)</span>
+<span class="c1">-- if base.__index ~= base</span>
+<span class="n">index</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">base</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">index</span>
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">basebase</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tab1</span><span class="p">.</span><span class="n">id</span><span class="p">)</span> <span class="c1">-- 1 still</span>
+</code></pre></div></div> <div class="jekyll-diagrams diagrams mermaid"> <svg id="mermaid-1696690128515" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 693.2734375px;" viewBox="0 0 693.2734375 681"><style>#mermaid-1696690128515 .label{font-family:trebuchet ms,verdana,arial;color:#333}#mermaid-1696690128515 .node circle,#mermaid-1696690128515 .node ellipse,#mermaid-1696690128515 .node polygon,#mermaid-1696690128515 .node rect{fill:#ececff;stroke:#9370db;stroke-width:1px}#mermaid-1696690128515 .node.clickable{cursor:pointer}#mermaid-1696690128515 .arrowheadPath{fill:#333}#mermaid-1696690128515 .edgePath .path{stroke:#333;stroke-width:1.5px}#mermaid-1696690128515 .edgeLabel{background-color:#e8e8e8}#mermaid-1696690128515 .cluster rect{fill:#ffffde!important;stroke:#aa3!important;stroke-width:1px!important}#mermaid-1696690128515 .cluster text{fill:#333}#mermaid-1696690128515 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:trebuchet ms,verdana,arial;font-size:12px;background:#ffffde;border:1px solid #aa3;border-radius:2px;pointer-events:none;z-index:100}#mermaid-1696690128515 .actor{stroke:#ccf;fill:#ececff}#mermaid-1696690128515 text.actor{fill:#000;stroke:none}#mermaid-1696690128515 .actor-line{stroke:grey}#mermaid-1696690128515 .messageLine0{marker-end:"url(#arrowhead)"}#mermaid-1696690128515 .messageLine0,#mermaid-1696690128515 .messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#mermaid-1696690128515 #arrowhead{fill:#333}#mermaid-1696690128515 #crosshead path{fill:#333!important;stroke:#333!important}#mermaid-1696690128515 .messageText{fill:#333;stroke:none}#mermaid-1696690128515 .labelBox{stroke:#ccf;fill:#ececff}#mermaid-1696690128515 .labelText,#mermaid-1696690128515 .loopText{fill:#000;stroke:none}#mermaid-1696690128515 .loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#ccf}#mermaid-1696690128515 .note{stroke:#aa3;fill:#fff5ad}#mermaid-1696690128515 .noteText{fill:#000;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:14px}#mermaid-1696690128515 .section{stroke:none;opacity:.2}#mermaid-1696690128515 .section0{fill:rgba(102,102,255,.49)}#mermaid-1696690128515 .section2{fill:#fff400}#mermaid-1696690128515 .section1,#mermaid-1696690128515 .section3{fill:#fff;opacity:.2}#mermaid-1696690128515 .sectionTitle0,#mermaid-1696690128515 .sectionTitle1,#mermaid-1696690128515 .sectionTitle2,#mermaid-1696690128515 .sectionTitle3{fill:#333}#mermaid-1696690128515 .sectionTitle{text-anchor:start;font-size:11px;text-height:14px}#mermaid-1696690128515 .grid .tick{stroke:#d3d3d3;opacity:.3;shape-rendering:crispEdges}#mermaid-1696690128515 .grid path{stroke-width:0}#mermaid-1696690128515 .today{fill:none;stroke:red;stroke-width:2px}#mermaid-1696690128515 .task{stroke-width:2}#mermaid-1696690128515 .taskText{text-anchor:middle;font-size:11px}#mermaid-1696690128515 .taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}#mermaid-1696690128515 .taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}#mermaid-1696690128515 .taskText0,#mermaid-1696690128515 .taskText1,#mermaid-1696690128515 .taskText2,#mermaid-1696690128515 .taskText3{fill:#fff}#mermaid-1696690128515 .task0,#mermaid-1696690128515 .task1,#mermaid-1696690128515 .task2,#mermaid-1696690128515 .task3{fill:#8a90dd;stroke:#534fbc}#mermaid-1696690128515 .taskTextOutside0,#mermaid-1696690128515 .taskTextOutside1,#mermaid-1696690128515 .taskTextOutside2,#mermaid-1696690128515 .taskTextOutside3{fill:#000}#mermaid-1696690128515 .active0,#mermaid-1696690128515 .active1,#mermaid-1696690128515 .active2,#mermaid-1696690128515 .active3{fill:#bfc7ff;stroke:#534fbc}#mermaid-1696690128515 .activeText0,#mermaid-1696690128515 .activeText1,#mermaid-1696690128515 .activeText2,#mermaid-1696690128515 .activeText3{fill:#000!important}#mermaid-1696690128515 .done0,#mermaid-1696690128515 .done1,#mermaid-1696690128515 .done2,#mermaid-1696690128515 .done3{stroke:grey;fill:#d3d3d3;stroke-width:2}#mermaid-1696690128515 .doneText0,#mermaid-1696690128515 .doneText1,#mermaid-1696690128515 .doneText2,#mermaid-1696690128515 .doneText3{fill:#000!important}#mermaid-1696690128515 .crit0,#mermaid-1696690128515 .crit1,#mermaid-1696690128515 .crit2,#mermaid-1696690128515 .crit3{stroke:#f88;fill:red;stroke-width:2}#mermaid-1696690128515 .activeCrit0,#mermaid-1696690128515 .activeCrit1,#mermaid-1696690128515 .activeCrit2,#mermaid-1696690128515 .activeCrit3{stroke:#f88;fill:#bfc7ff;stroke-width:2}#mermaid-1696690128515 .doneCrit0,#mermaid-1696690128515 .doneCrit1,#mermaid-1696690128515 .doneCrit2,#mermaid-1696690128515 .doneCrit3{stroke:#f88;fill:#d3d3d3;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}#mermaid-1696690128515 .activeCritText0,#mermaid-1696690128515 .activeCritText1,#mermaid-1696690128515 .activeCritText2,#mermaid-1696690128515 .activeCritText3,#mermaid-1696690128515 .doneCritText0,#mermaid-1696690128515 .doneCritText1,#mermaid-1696690128515 .doneCritText2,#mermaid-1696690128515 .doneCritText3{fill:#000!important}#mermaid-1696690128515 .titleText{text-anchor:middle;font-size:18px;fill:#000}
+#mermaid-1696690128515 g.classGroup text{fill:#9370db;stroke:none;font-family:trebuchet ms,verdana,arial;font-size:10px}#mermaid-1696690128515 g.classGroup rect{fill:#ececff;stroke:#9370db}#mermaid-1696690128515 g.classGroup line{stroke:#9370db;stroke-width:1}#mermaid-1696690128515 .classLabel .box{stroke:none;stroke-width:0;fill:#ececff;opacity:.5}#mermaid-1696690128515 .classLabel .label{fill:#9370db;font-size:10px}#mermaid-1696690128515 .relation{stroke:#9370db;stroke-width:1;fill:none}#mermaid-1696690128515 #compositionEnd,#mermaid-1696690128515 #compositionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1696690128515 #aggregationEnd,#mermaid-1696690128515 #aggregationStart{fill:#ececff;stroke:#9370db;stroke-width:1}#mermaid-1696690128515 #dependencyEnd,#mermaid-1696690128515 #dependencyStart,#mermaid-1696690128515 #extensionEnd,#mermaid-1696690128515 #extensionStart{fill:#9370db;stroke:#9370db;stroke-width:1}#mermaid-1696690128515 .branch-label,#mermaid-1696690128515 .commit-id,#mermaid-1696690128515 .commit-msg{fill:#d3d3d3;color:#d3d3d3}</style><style>#mermaid-1696690128515{color:#000;font:normal normal 400 normal 16px / normal "Times New Roman"}</style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"><g class="cluster" id="subGraph6" transform="translate(538.125,490.5)" style="opacity: 1;"><rect width="318.296875" height="389" x="-159.1484375" y="-194.5"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-180.5" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">extra_index</text></g><g class="cluster" id="subGraph4" transform="translate(538.125,365)" style="opacity: 1;"><rect width="264.9375" height="88" x="-132.46875" y="-44"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-30" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">index.</text></g><g class="cluster" id="subGraph5" transform="translate(538.125,616)" style="opacity: 1;"><rect width="278.296875" height="88" x="-139.1484375" y="-44"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-30" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">index..</text></g><g class="cluster" id="subGraph3" transform="translate(189.48828125,421.5)" style="opacity: 1;"><rect width="338.9765625" height="527" x="-169.48828125" y="-263.5"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-249.5" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">self-index</text></g><g class="cluster" id="subGraph1" transform="translate(205.50390625,296)" style="opacity: 1;"><rect width="261.1640625" height="226" x="-130.58203125" y="-113"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-99" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">base</text></g><g class="cluster" id="subGraph2" transform="translate(178.365234375,559.5)" style="opacity: 1;"><rect width="276.73046875" height="201" x="-138.365234375" y="-100.5"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-86.5" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">basebase</text></g><g class="cluster" id="subGraph0" transform="translate(196.71875,64)" style="opacity: 1;"><rect width="222.28125" height="88" x="-111.140625" y="-44"></rect><g class="label"><g transform="translate(0,0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"></div></foreignObject></g></g><text x="0" y="-30" fill="black" stroke="none" id="mermaid-1696690128515Text" style="text-anchor: middle;">t</text></g></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M146.1484375,83L146.1484375,108L146.1484375,133L146.1484375,158L146.1484375,183L174.88156960227272,208" marker-end="url(#arrowhead178)" style="fill:none"></path><defs><marker id="arrowhead178" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M247.2890625,83L247.2890625,108L247.2890625,133L247.2890625,158L247.2890625,183L218.55593039772728,208" marker-end="url(#arrowhead179)" style="fill:none"></path><defs><marker id="arrowhead179" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M176.52112926136363,246L149.9453125,271L149.9453125,296L149.9453125,321L149.9453125,346" marker-end="url(#arrowhead180)" style="fill:none"></path><defs><marker id="arrowhead180" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M149.9453125,384L149.9453125,409L149.9453125,434L149.9453125,459L149.9453125,484" marker-end="url(#arrowhead181)" style="fill:none"></path><defs><marker id="arrowhead181" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M139.0908203125,522L124.80859375,547L124.80859375,572L124.80859375,597" marker-end="url(#arrowhead182)" style="fill:none"></path><defs><marker id="arrowhead182" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M232.5900213068182,246L279.7890625,271L279.7890625,296L279.7890625,321L440.65625,358.2549858135614" marker-end="url(#arrowhead183)" style="stroke: #333; fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead183" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M469.78125,384L469.78125,409L469.78125,434L469.78125,459L224.890625,492.68973350594786" marker-end="url(#arrowhead184)" style="stroke: #333; fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead184" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M187.06480823863637,522L235.90625,547L235.90625,572L433.9765625,609.6220700819534" marker-end="url(#arrowhead185)" style="stroke: #333; fill:none;stroke-width:2px;stroke-dasharray:3;"></path><defs><marker id="arrowhead185" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="base.__index" transform="translate(196.71875,227)" style="opacity: 1;"><rect rx="0" ry="0" x="-57.59375" y="-19" width="115.1875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-47.59375,-9)"><foreignObject width="95.1875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">base.__index</div></foreignObject></g></g></g><g class="node" id="index" transform="translate(469.78125,365)" style="opacity: 1;"><rect rx="0" ry="0" x="-29.125" y="-19" width="58.25" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-19.125,-9)"><foreignObject width="38.25" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">index</div></foreignObject></g></g></g><g class="node" id="basebase.__index" transform="translate(149.9453125,503)" style="opacity: 1;"><rect rx="0" ry="0" x="-74.9453125" y="-19" width="149.890625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-64.9453125,-9)"><foreignObject width="129.890625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">basebase.__index</div></foreignObject></g></g></g><g class="node" id="index2" transform="translate(467.5546875,616)" style="opacity: 1;"><rect rx="0" ry="0" x="-33.578125" y="-19" width="67.15625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-23.578125,-9)"><foreignObject width="47.15625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">index2</div></foreignObject></g></g></g><g class="node" id="member..." transform="translate(596.703125,616)" style="opacity: 1;"><rect rx="0" ry="0" x="-45.5703125" y="-19" width="91.140625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-35.5703125,-9)"><foreignObject width="71.140625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">member...</div></foreignObject></g></g></g><g class="node" id="member.." transform="translate(592.25,365)" style="opacity: 1;"><rect rx="0" ry="0" x="-43.34375" y="-19" width="86.6875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-33.34375,-9)"><foreignObject width="66.6875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">member..</div></foreignObject></g></g></g><g class="node" id="self" transform="translate(149.9453125,365)" style="opacity: 1;"><rect rx="0" ry="0" x="-22.453125" y="-19" width="44.90625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-12.453125,-9)"><foreignObject width="24.90625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">self</div></foreignObject></g></g></g><g class="node" id="self." transform="translate(124.80859375,616)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.671875" y="-19" width="49.34375" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.671875,-9)"><foreignObject width="29.34375" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">self.</div></foreignObject></g></g></g><g class="node" id="member." transform="translate(240.60546875,616)" style="opacity: 1;"><rect rx="0" ry="0" x="-41.125" y="-19" width="82.25" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31.125,-9)"><foreignObject width="62.25" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">member.</div></foreignObject></g></g></g><g class="node" id="member" transform="translate(261.7421875,365)" style="opacity: 1;"><rect rx="0" ry="0" x="-39.34375" y="-19" width="78.6875" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29.34375,-9)"><foreignObject width="58.6875" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">member</div></foreignObject></g></g></g><g class="node" id="tab1" transform="translate(146.1484375,64)" style="opacity: 1;"><rect rx="0" ry="0" x="-25.5703125" y="-19" width="51.140625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-15.5703125,-9)"><foreignObject width="31.140625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">tab1</div></foreignObject></g></g></g><g class="node" id="tab2" transform="translate(247.2890625,64)" style="opacity: 1;"><rect rx="0" ry="0" x="-25.5703125" y="-19" width="51.140625" height="38"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-15.5703125,-9)"><foreignObject width="31.140625" height="18"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">tab2</div></foreignObject></g></g></g></g></g></g></svg> </div> <h3 id="class">class</h3> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animal</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+	<span class="n">name</span> <span class="o">=</span> <span class="s2">"animal"</span><span class="p">,</span>
+	<span class="n">new</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">obj</span><span class="p">)</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span> <span class="ow">or</span> <span class="p">{}</span>
+		<span class="nb">setmetatable</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">self</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">obj</span>
+	<span class="k">end</span><span class="p">,</span>
+	<span class="n">getId</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">id</span>
+	<span class="k">end</span>
+<span class="p">}</span>
+<span class="n">animal</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">animal</span>
+
+<span class="n">cat</span> <span class="o">=</span> <span class="n">animal</span><span class="p">:</span><span class="n">new</span><span class="p">({</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">"cat"</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cat</span><span class="p">:</span><span class="n">getId</span><span class="p">())</span> 	  <span class="c1">-- 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="p">:</span><span class="n">getId</span><span class="p">())</span> <span class="c1">-- 0</span>
+</code></pre></div></div> <p>Encapsulate the <code class="language-plaintext highlighter-rouge">setmetatable</code> and it supports the initialization table</p> <p>Then if inherent from cat , need to set <code class="language-plaintext highlighter-rouge">cat.__index = cat</code> or encapsulate it as well</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animal</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="n">id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+	<span class="n">name</span> <span class="o">=</span> <span class="s2">"animal"</span><span class="p">,</span>
+	<span class="n">new</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">obj</span><span class="p">)</span>
+		<span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span> <span class="ow">or</span> <span class="p">{}</span>
+		<span class="nb">setmetatable</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">self</span><span class="p">)</span>
+		<span class="n">obj</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">obj</span>
+		<span class="k">return</span> <span class="n">obj</span>
+	<span class="k">end</span><span class="p">,</span>
+	<span class="n">getId</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">id</span>
+	<span class="k">end</span><span class="p">,</span>
+	<span class="nb">print</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">vis</span><span class="p">)</span>
+		<span class="n">vis</span> <span class="o">=</span> <span class="n">vis</span> <span class="ow">or</span> <span class="p">{}</span>
+		<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="k">do</span>
+			<span class="k">if</span> <span class="n">key</span> <span class="o">~=</span> <span class="s2">"__index"</span> <span class="ow">and</span> <span class="n">vis</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">then</span>
+				<span class="n">vis</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>					
+				<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+			<span class="k">end</span>
+		<span class="k">end</span>
+		<span class="n">meta</span> <span class="o">=</span> <span class="nb">getmetatable</span><span class="p">(</span><span class="n">self</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">meta</span> <span class="k">then</span>
+			<span class="n">meta</span><span class="p">:</span><span class="nb">print</span><span class="p">(</span><span class="n">vis</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+<span class="p">}</span>
+<span class="n">animal</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">animal</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">animal</span><span class="p">:</span><span class="n">new</span><span class="p">({</span><span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">"cat"</span><span class="p">})</span>
+
+<span class="n">ragdollCat</span> <span class="o">=</span> <span class="n">cat</span><span class="p">:</span><span class="n">new</span><span class="p">({</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">"ragdollCat"</span><span class="p">})</span>
+<span class="n">ragdollCat</span><span class="p">:</span><span class="nb">print</span><span class="p">()</span>
+<span class="c1">-- breed   ragdollCat</span>
+<span class="c1">-- id      1</span>
+<span class="c1">-- name    cat</span>
+<span class="c1">-- new     function: 0x56129d355770</span>
+<span class="c1">-- getId   function: 0x56129d356260</span>
+<span class="c1">-- print   function: 0x56129d3546b0</span>
+</code></pre></div></div> <p>Lua dont support mutiple inherence owing to unique metatable</p> <p>And it can simulate <strong>class</strong> by function</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="k">function</span> <span class="nf">animal</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+	<span class="kd">local</span> <span class="n">self</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+		<span class="n">name</span> <span class="o">=</span> <span class="s2">"animal"</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="n">name</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
+		<span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+	<span class="k">end</span>
+	<span class="k">function</span> <span class="nf">self</span><span class="p">:</span><span class="n">getname</span><span class="p">()</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+	<span class="k">end</span>
+	<span class="k">return</span> <span class="n">self</span>
+<span class="k">end</span>
+
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">cat</span><span class="p">(</span><span class="n">breed</span><span class="p">)</span>
+	<span class="kd">local</span> <span class="n">self</span> <span class="o">=</span> <span class="n">animal</span><span class="p">(</span><span class="s2">"cat"</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">breed</span> <span class="o">~=</span> <span class="kc">nil</span> <span class="k">then</span>
+		<span class="n">self</span><span class="p">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+	<span class="k">end</span>
+
+	<span class="k">function</span> <span class="nf">self</span><span class="p">:</span><span class="n">getbreed</span><span class="p">()</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">breed</span><span class="p">)</span>
+	<span class="k">end</span>
+	<span class="k">return</span> <span class="n">self</span>
+<span class="k">end</span>
+
+<span class="n">ragdollCat</span> <span class="o">=</span> <span class="n">cat</span><span class="p">(</span><span class="s2">"ragdollCat"</span><span class="p">)</span>
+
+<span class="n">ragdollCat</span><span class="p">:</span><span class="n">getname</span><span class="p">()</span>
+<span class="n">ragdollCat</span><span class="p">:</span><span class="n">getbreed</span><span class="p">()</span>
+<span class="c1">-- cat</span>
+<span class="c1">-- ragdollCat</span>
+
+<span class="n">ragdollCat</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"person"</span>
+<span class="n">ragdollCat</span><span class="p">:</span><span class="n">getname</span><span class="p">()</span>
+<span class="c1">-- person</span>
+
+<span class="n">AshCat</span> <span class="o">=</span> <span class="n">cat</span><span class="p">(</span><span class="s2">"American shorthair Cat"</span><span class="p">)</span>
+<span class="n">AshCat</span><span class="p">:</span><span class="n">getname</span><span class="p">()</span>
+<span class="n">AshCat</span><span class="p">:</span><span class="n">getbreed</span><span class="p">()</span>
+<span class="c1">-- cat</span>
+<span class="c1">-- American shorthair Cat</span>
+</code></pre></div></div> <p>This method dont need to set anything like <code class="language-plaintext highlighter-rouge">__index</code> and <code class="language-plaintext highlighter-rouge">metatable</code> , because the last <code class="language-plaintext highlighter-rouge">self</code> returned is the same table as the first one in animal</p> <p>The structure of two simulated class (Ignore the __index)</p> <ul> <li> <p>First , implemented by <strong>metatable</strong></p> <p>The relational structure with shared ancestor</p> <pre><code class="language-mermaid">  graph TD
+  subgraph ragdollCat
+  breed. --'override'--&gt; breed
+  name. --'override'--&gt; name
+  subgraph cat
+  subgraph animal
+  id
+  name
+  getId
+  new
+  print
+  end
+    
+  subgraph catself
+  breed
+  end
+  end
+  end
+    
+  animal --derive--&gt;catself
+</code></pre> </li> <li> <p>Second , implemented by <strong>funcion</strong></p> <p>independent individual</p> <pre><code class="language-mermaid">  graph TB
+    
+  subgraph cat
+  subgraph animal
+  id
+  name
+  getName
+  end
+  breed
+  getBreed
+  end
+  subgraph cat.
+  subgraph animal.
+  id.
+  name.
+  getName.
+  end
+  breed.
+  getBreed.
+  end
+</code></pre> <p>This is because <strong>cat</strong> and <strong>animal</strong> are <strong>function</strong> rather than object , and each call to them returns a unique table containing the members defined within their own function bodies</p> </li> </ul> <h3 id="private">private</h3> <p>Through closure , it can simulate private member</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">animal</span> <span class="p">()</span>
+    <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">-- private</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">"animal"</span> <span class="c1">-- public</span>
+    <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">end</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">getId</span> <span class="o">=</span> <span class="n">id</span><span class="p">,</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="p">}</span>
+<span class="k">end</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">animal</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="c1">-- nil animal</span>
+</code></pre></div></div> <h2 id="coroutine">coroutine</h2> <p>Producer-consumer</p> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="k">function</span> <span class="nf">consume</span><span class="p">()</span>
+	<span class="k">while</span> <span class="kc">true</span> <span class="k">do</span>
+		<span class="kd">local</span> <span class="n">_</span><span class="p">,</span><span class="n">consu</span> <span class="o">=</span> <span class="nb">coroutine.resume</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>
+		<span class="nb">print</span><span class="p">(</span><span class="n">consu</span><span class="p">)</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">produce</span><span class="p">()</span>
+	<span class="kd">local</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">while</span> <span class="kc">true</span> <span class="k">do</span>
+		<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+		<span class="nb">coroutine.yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">consumer</span> <span class="o">=</span> <span class="nb">coroutine.create</span><span class="p">(</span><span class="n">consume</span><span class="p">)</span>
+<span class="n">producer</span> <span class="o">=</span> <span class="nb">coroutine.create</span><span class="p">(</span><span class="n">produce</span><span class="p">)</span>
+
+<span class="nb">coroutine.resume</span><span class="p">(</span><span class="n">consumer</span><span class="p">)</span>
+</code></pre></div></div> <h2 id="other">other</h2> <h3 id="string">string</h3> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">string.upper</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">string.lower</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">string.len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">string.reverse</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="nb">string.sub</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">begin</span><span class="p">,</span><span class="k">end</span><span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="c1">-- contain string[begin],string[end]</span>
+<span class="c1">-- end need less than length</span>
+
+<span class="nb">string.gsub</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">pattern</span><span class="p">,</span><span class="n">repl</span><span class="p">,</span><span class="n">maximum</span><span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="c1">-- replace all match the pattern to repl </span>
+<span class="c1">-- if maximum, replace at most maximum matched value</span>
+
+<span class="nb">string.match</span>
+<span class="nb">string.gmatch</span>
+
+<span class="nb">string.find</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">pattern</span><span class="p">,</span><span class="n">init</span><span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">,</span><span class="n">plain</span><span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="c1">-- return f,e = string.find</span>
+<span class="c1">-- f,e = result.firstpos, result.endpos</span>
+<span class="c1">-- init = find begin pos</span>
+<span class="c1">-- plain= false regex default</span>
+<span class="c1">--		= true close regex</span>
+<span class="c1">-- if pattern = regex and with () capture parentheses</span>
+<span class="c1">-- return f,e,cap</span>
+
+<span class="nb">string.byte</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">begin</span><span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">,</span><span class="k">end</span><span class="o">&lt;</span><span class="n">default</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="c1">-- ascii to char</span>
+<span class="c1">-- if set begin end can convert and return more value</span>
+
+<span class="nb">string.char</span><span class="p">(</span><span class="o">...</span><span class="p">(</span><span class="n">int</span><span class="p">))</span>
+<span class="c1">-- char to ascii</span>
+</code></pre></div></div> <h3 id="io">io</h3> <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file</span> <span class="o">=</span> <span class="nb">io.open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="nb">io.input</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="nb">io.output</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="nb">io.read</span><span class="p">()</span>
+<span class="nb">io.write</span><span class="p">()</span>
+<span class="c1">--</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">io.open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s2">"r+"</span><span class="p">)</span>
+<span class="n">file</span><span class="p">:</span><span class="n">read</span><span class="p">(</span><span class="s2">"*all"</span><span class="p">)</span>
+<span class="n">file</span><span class="p">:</span><span class="n">seek</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)</span>
+<span class="n">file</span><span class="p">:</span><span class="n">write</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">file</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">-- </span>
+<span class="k">for</span> <span class="n">line</span> <span class="k">in</span> <span class="nb">io.lines</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">do</span> <span class="k">end</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">io.open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span><span class="s2">"r"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="k">in</span> <span class="n">file</span><span class="p">:</span><span class="n">lines</span><span class="p">()</span> <span class="k">do</span> <span class="k">end</span>
+</code></pre></div></div>]]></content><author><name></name></author><category term="tutorial"/><category term="lua"/><category term="language"/><category term="syntax"/><summary type="html"><![CDATA[lua syntax summary]]></summary></entry><entry><title type="html">a post with bibliography</title><link href="https://wenqingqian.github.io/blog/2023/post-bibliography/" rel="alternate" type="text/html" title="a post with bibliography"/><published>2023-07-12T13:56:00+00:00</published><updated>2023-07-12T13:56:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/post-bibliography</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/post-bibliography/"><![CDATA[<p>This post shows how to add bibliography to simple blog posts. If you would like something more academic, check the <a href="/blog/2021/distill/">distill style post</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="bib"/><summary type="html"><![CDATA[an example of a blog post with bibliography]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="https://wenqingqian.github.io/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook"/><published>2023-07-04T12:57:00+00:00</published><updated>2023-07-04T12:57:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/jupyter-notebook</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
 {% assign jupyter_path = "assets/jupyter/blog.ipynb" | relative_url %}
 {% capture notebook_exists %}{% file_exists assets/jupyter/blog.ipynb %}{% endcapture %}
 {% if notebook_exists == "true" %}
@@ -102,4 +722,4 @@
 <span class="nt">&lt;/table&gt;</span>
 </code></pre></div></div> <table data-click-to-select="true" data-height="460" data-pagination="true" data-search="true" data-toggle="table" data-url="/assets/json/table_data.json"> <thead> <tr> <th data-checkbox="true"></th> <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th> <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th> <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th> </tr> </thead> </table>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="tables"/><summary type="html"><![CDATA[an example of how to use Bootstrap Tables]]></summary></entry><entry><title type="html">a post with table of contents</title><link href="https://wenqingqian.github.io/blog/2023/table-of-contents/" rel="alternate" type="text/html" title="a post with table of contents"/><published>2023-03-20T15:59:00+00:00</published><updated>2023-03-20T15:59:00+00:00</updated><id>https://wenqingqian.github.io/blog/2023/table-of-contents</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2023/table-of-contents/"><![CDATA[<p>This post shows how to add a table of contents in the beginning of the post.</p> <h2 id="adding-a-table-of-contents">Adding a Table of Contents</h2> <p>To add a table of contents to a post, simply add</p> <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
   <span class="na">beginning</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div></div> <p>to the front matter of the post. The table of contents will be automatically generated from the headings in the post.</p> <h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h2 id="table-of-contents-options">Table of Contents Options</h2> <p>If you want to learn more about how to customize the table of contents, you can check the <a href="https://github.com/toshimaru/jekyll-toc">jekyll-toc</a> repository.</p> <h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="toc"/><summary type="html"><![CDATA[an example of a blog post with table of contents]]></summary></entry><entry><title type="html">a post with giscus comments</title><link href="https://wenqingqian.github.io/blog/2022/giscus-comments/" rel="alternate" type="text/html" title="a post with giscus comments"/><published>2022-12-10T15:59:00+00:00</published><updated>2022-12-10T15:59:00+00:00</updated><id>https://wenqingqian.github.io/blog/2022/giscus-comments</id><content type="html" xml:base="https://wenqingqian.github.io/blog/2022/giscus-comments/"><![CDATA[<p>This post shows how to add GISCUS comments.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="external-services"/><category term="comments"/><summary type="html"><![CDATA[an example of a blog post with giscus comments]]></summary></entry></feed>
+</code></pre></div></div> <p>to the front matter of the post. The table of contents will be automatically generated from the headings in the post.</p> <h3 id="example-of-sub-heading-1">Example of Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-1">Example of another Sub-Heading 1</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h2 id="table-of-contents-options">Table of Contents Options</h2> <p>If you want to learn more about how to customize the table of contents, you can check the <a href="https://github.com/toshimaru/jekyll-toc">jekyll-toc</a> repository.</p> <h3 id="example-of-sub-heading-2">Example of Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p> <h3 id="example-of-another-sub-heading-2">Example of another Sub-Heading 2</h3> <p>Jean shorts raw denim Vice normcore, art party High Life PBR skateboard stumptown vinyl kitsch. Four loko meh 8-bit, tousled banh mi tilde forage Schlitz dreamcatcher twee 3 wolf moon. Chambray asymmetrical paleo salvia, sartorial umami four loko master cleanse drinking vinegar brunch. <a href="https://www.pinterest.com">Pinterest</a> DIY authentic Schlitz, hoodie Intelligentsia butcher trust fund brunch shabby chic Kickstarter forage flexitarian. Direct trade <a href="https://en.wikipedia.org/wiki/Cold-pressed_juice">cold-pressed</a> meggings stumptown plaid, pop-up taxidermy. Hoodie XOXO fingerstache scenester Echo Park. Plaid ugh Wes Anderson, freegan pug selvage fanny pack leggings pickled food truck DIY irony Banksy.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="toc"/><summary type="html"><![CDATA[an example of a blog post with table of contents]]></summary></entry></feed>

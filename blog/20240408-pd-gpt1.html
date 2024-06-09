@@ -1,0 +1,121 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>[GPT1] Improving language understanding by generative pre-training</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-8</h2>
+</div><p><a href="https://www.mikecaptain.com/resources/pdf/GPT-1.pdf">论文原文</a></p>
+<section>
+<h1>intro</h1>
+<p>由于标记语料数据的稀缺, 使得基于判别式训练的模型难以有足够的性能</p>
+<p>但是丰富的未标记的语料库提供了另一种可能:</p>
+<ul>
+<li>通过在多样化的未标记文本语料库上进行语言模型的生成式预训练(Generative Pre-Training)</li>
+<li>然后对每个特定任务进行判别式微调(discriminative finetuning), 可以实现效果大幅提升</li>
+</ul>
+<p>而从未标记语料中提取出超越词级的信息有以下两个挑战:</p>
+<ul>
+<li>尚不明确哪种类型的优化目标对于学习利于转移的文本表示更有效</li>
+<li>对于如何高效的转移学习到的表示到目标任务仍未有共识</li>
+</ul>
+<p>本文提出一种用于语言理解任务的半监督方法:</p>
+<ul>
+<li>结合无监督预训练和有监督微调</li>
+<li>目标: 学习一种通用表示, 几乎不需要调整就可以迁移到广泛的任务上</li>
+<li>数据集: 大量未标注的文本和几个目标任务相关的带有手动标注训练示例的数据集</li>
+</ul>
+<p>具体的:</p>
+<ul>
+<li>在未标注数据上初始化神经网络模型参数</li>
+<li>使用有监督目标来调整这些参数以适应目标任务</li>
+</ul>
+</section>
+<section>
+<h1>model and framework</h1>
+<h2>unsupervised pre-training</h2>
+<p>对于给定未标记语料\(\mathcal U= \{ u_1,\dots,u_n \}\), 模型的目标是最大化这个似然函数:</p>
+<div>
+\[
+L_1(\mathcal U)=\underset{i}{\sum} log\space P(u_i|u_{i-k},\dots,u_{i-1};\Theta)
+\]
+</div>
+<p>其中:</p>
+<ul>
+<li>k: 上下文窗口大小</li>
+</ul>
+<p>GPT 基于Transformer的decoder, 输入上下文得到预测结果分布</p>
+<p>具体的:</p>
+<div>
+\[
+\begin{aligned}
+h_0 &= UW_e+W_p\\
+h_l &= transformer\_block(h_{l-1}\forall i\in [1,n])\\
+P(u) &= softmax(h_nW_e^T)
+\end{aligned}
+\]
+</div>
+<p>其中:</p>
+<ul>
+<li>U: 上下文</li>
+<li>n: 层数</li>
+<li>\(W_e\): token embedding matrix</li>
+<li>\(W_p\): position embedding matrix</li>
+</ul>
+<h2>supervised fine-tuning</h2>
+<p>对于标注数据集\(\mathcal C\), 有:</p>
+<div>
+\[
+P(y|x^1,\dots,x^m)=softmax(h_l^mW_y)
+\]
+</div>
+<div>
+\[
+L_2(\mathcal C)=\underset{(x,y)}{\sum}log\space P(y|x^1,\dots,x^m)
+\]
+</div>
+</section>
+<section>
+<h1>Task-specific input transformations</h1>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/gpt1/framework.png" style="display: block; margin: 0 auto;width: 70%;" alt="err! email me if you need">
+<p>对于一些特殊的任务, 比如QA(question&answer)之类有一定结构形式的文本, 可能需要一些额外的处理</p>
+<p>模型是在连续文本上训练的, 对于这些结构式可以通过加入一些特殊的分隔符(开始, 结束, 分隔)来转为模型可以处理的有序序列</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

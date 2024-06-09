@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_english.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-13</h2>
+</div><p><a href="https://arxiv.org/pdf/2110.07602.pdf">original paper</a></p>
+<section>
+<h1>intro</h1>
+<p>P-Tuning v2 is an optimized and adapted implementation of Prefix Tuning in NLU tasks and achieve the effect of fine-tune, which surpasses the prompt-tuning and p-tuning</p>
+</section>
+<section>
+<h1>Background</h1>
+<p>Lack of universality across scales:</p>
+<ul>
+<li>prompt-tuning can be comparable to fine-tuning when the model scales to over 10B but perform much worse for medium-sized models (from 100M to 1B)</li>
+</ul>
+<p>Lack of universality across tasks:</p>
+<ul>
+<li>prompt-tuning and p-tuning perform poorly  on sequence tagging tasks (due to verbalizers)</li>
+</ul>
+<p>Lack of tunable parameters:</p>
+<ul>
+<li>prompt-tuning and p-tuning only insert continuous prompts into the input embedding sequences, which lead to:</li>
+<ul>
+<li>limited tunable parameters due to constraints of sequence length</li>
+<li>no direct impact on model predictions</li>
+</ul>
+</ul>
+</section>
+<section>
+<h1>Optimization and Implementation</h1>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/ptuning2/diff.png" style="display: block; margin: 0 auto;width: 90%;" alt="err! email me if you need">
+<p>The prompts will be inserted into KV matrices for each transformer</p>
+<h2>Reparameterization</h2>
+<p>prompt-tuning use MLP and p-tuning use LSTM as reparameterization encoder, however, its usefulness depends on tasks and datasets in NLU</p>
+<h2>Prompt length</h2>
+<p>different NLU tasks achieve their best performance with different prompt length</p>
+<h2>Classification Head</h2>
+<p>P-Tuning v2 applies a randomly-initialized classification head instead of verbalizers due to its uselessness in full-data setting</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

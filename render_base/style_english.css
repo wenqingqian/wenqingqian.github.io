@@ -1,0 +1,21 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+header {
+    font-weight: normal;
+    font-size: 2.5em;
+    font-family: "ZCOOL XiaoWei", serif;
+    width: 100%;
+    max-width: var(--max-width-show);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.3em;
+    margin-top: 0.8em;
+}
+h1, h2, h3 {
+    font-weight: normal;
+    font-family: "Marcellus SC", sans-serif;
+}

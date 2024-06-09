@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_english.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>Megatron-LM</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-16</h2>
+</div><p>Paper: </p>
+<p><a href="https://arxiv.org/pdf/1909.08053.pdf">Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism</a></p>
+<p><a href="https://doi.org/10.1145/3458817.3476209">Efficient large-scale language model training on GPU clusters using megatron-LM</a></p>
+<p><a href="https://github.com/NVIDIA/Megatron-LM">Github</a></p>
+<section>
+<h1>Introcution</h1>
+<p>NVIDIA Megatron-LM is a distributed training framework based on PyTorch, used to train LLMs based on Transformer. Megatron-LM comprehensively applies data parallelism, tensor parallelism and pipeline parallelism.</p>
+</section>
+<section>
+<h1>Parallelism</h1>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/parallel.png" style="display: block; margin: 0 auto;width: 50%;" alt="err! email me if you need">
+<h2>Data Parallelism</h2>
+<p><u> Data Parallelism (DP)</u></p>
+<ul>
+<li>Each GPU load the complete model</li>
+<li>Split batch to \(\)N\(\) (the number of GPU) micro-batch and each GPU get a micro-batch</li>
+<li>Each GPU performs complete operations and send the gradient to server:</li>
+<ul>
+<li>server: dedicated to receiving the gradients, adding them up and sending to each GPU</li>
+</ul>
+<li>Update the parameters in each GPU</li>
+</ul>
+<p><u> Distributed Data Parallelism (DDP)</u></p>
+<p><a href="https://arxiv.org/pdf/2006.15704.pdf">PyTorch Distributed: Experiences on Accelerating Data Parallel Training</a></p>
+<p>At step 3, no longer use a dedicated node to perform these operations, as this would make the bandwidth of node a bottleneck, instead,  the ring all-reduce is used to enable each node to participate the process</p>
+<p>See <a href="https://oneflow2020.medium.com/how-to-derive-ring-all-reduces-mathematical-property-step-by-step-9951500db96">ring all-reduce’s mathematical property</a></p>
+<p><u> ZeRO (Intro)</u></p>
+<p>At step 1, instead of loading the complete model in each GPU, the parameters are split to \(\)N\(\) parts so that each GPU can only store partial parameters and obtain the complete patameters through all-gather when needed</p>
+<h2>Model Parallelism</h2>
+<p>memory usage and computation is distributed across multiple workers</p>
+<p>There are two further paradigms:</p>
+<ul>
+<li>(TMP) Tensor Model Parallelism</li>
+<li>(PMP) Pipeline Model Parallelism</li>
+</ul>
+</section>
+<section>
+<h1>Model Parallel Transfromers</h1>
+<h2>TMP Transformer</h2>
+<p><u> MLP</u></p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/mlp.png" style="display: block; margin: 0 auto;width: 50%;" alt="err! email me if you need">
+<div>
+\[
+XA = X[A_1,A_2]=[Y_1,Y_2]
+\]
+</div>
+<div>
+\[
+[Y_1,Y_2]\left[\begin{matrix}B_1\\B_2\end{matrix}\right]=Y_1B_1+Y_2B_2
+\]
+</div>
+<p><u> Self-attention</u></p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/attn.png" style="display: block; margin: 0 auto;width: 50%;" alt="err! email me if you need">
+<p>Split by column parallel, use all-reduce after all operations</p>
+<p><u> Embedding</u></p>
+<p>parallelize the input embedding weight along the vocabulary dimension \(E=[E_1,E_2]\) and fuse the \([XE_1,XE_2]\) with cross entropy loss</p>
+<h2>PMP Transformer</h2>
+<p><u> GPipe</u></p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/gpipe.png" style="display: block; margin: 0 auto;width: 90%;" alt="err! email me if you need">
+<figure><figcaption>GPipe</figcaption></figure><p>In this example, divide transformer in 4 group evenly and assign each group to a device, and each batch consists of 8 microbatches</p>
+<p>i.e., 16 transformer layer, Device 1: \(layer_{0\to3}\) ...</p>
+<p>For convenience: </p>
+<ul>
+<li>\(p\): pipeline stage, the number of layer group which is the same as the device</li>
+<li>\(m\): the number of microbatches</li>
+<li>\(t_{id}\): time of ideal iteration</li>
+<li>\(t_{pb}\): time of pipeline bubble</li>
+<li>\(t_f\): time of forward pass in single microbatch execution</li>
+<li>\(t_b\): time of backward pass in single microbatch execution</li>
+<li>btf: bubble time fraction</li>
+</ul>
+<p>GPipe proposes a schedule where the forward passes for all microbatches in a batch are first executed, followed by backward passes for all microbatches</p>
+<div>
+\[
+btf=\frac{t_{pb}}{t_{id}}=\frac{(p-1)(t_f+t_b)}{m(t_f+t_b)}=\frac{p-1}{m}
+\]
+</div>
+<p>To reduce the btf, we need \(m\gg p\), but each device need to stash at least \(m\) activations for backward</p>
+<p><u> Pipedream</u></p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/vp.png" style="display: block; margin: 0 auto;width: 80%;" alt="err! email me if you need">
+<figure><figcaption>PipeDream to VirtualPipeline</figcaption></figure><p>Fine adjustments are made to the order of forward and backward, which called 1F1B pipeline schedules</p>
+<div>
+\[
+btf=\frac{t_{pb}}{t_{id}}=\frac{(p-1)(t_f+t_b)}{m(t_f+t_b)}=\frac{p-1}{m}
+\]
+</div>
+<p>It doesnt reduce the bubble time fraction, however, each device need to stash at most \(p\) activations, which means memory usage no longer linked to \(m\), so we can reduce btf by larger \(m\)</p>
+<p><u> virtual pipeline</u></p>
+<p>We could have each device perform computation for two layers, i.e., Device 1: \(layer_{0\to1,8\to 9}\) ...(GPipe Device 1: \(layer_{0\to 3}\)) so 1 forward pass requires 2 loops</p>
+<p>Formally, propose \(v\): virtual_pipeline_stage, which means 1 forward pass requires \(v\) loops in this example</p>
+<p>Its memory usage is simliar to PipeDream while:</p>
+<div>
+\[
+btf=\frac{t_{pb}}{t_{id}}=\frac{(p-1)(t_f+t_b)}{vm(t_f+t_b)}=\frac{1}{v}\frac{p-1}{m}
+\]
+</div>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/vp2.png" style="display: block; margin: 0 auto;width: 80%;" alt="err! email me if you need">
+<p>The result is that btf dropped \(v\) times while communication increased \(v\) times</p>
+</section>
+<section>
+<h1>Optimizations</h1>
+<h2>Comunication Optimizations</h2>
+<img src="../generator/raw_file/blog_markdown/./pic/llmframework/megatron/copt.png" style="display: block; margin: 0 auto;width: 70%;" alt="err! email me if you need">
+<p>On the send side, split the tensor into equal-sized chunks and then only send one chunk to the corresponding rank on the next node</p>
+<p>On the receive side, perform an all-gather over NVLink, which is much faster than the InfiniBand Interconnect</p>
+<h2>Computation Optimizations</h2>
+<ul>
+<li>data layout: from \([b,s,a,h]\) to \([s,b,a,h]\) to enable strided batched GEMM</li>
+<li>fused kernels: </li>
+<ul>
+<li>element-wise operations:</li>
+<p style="margin-bottom: 0em;">(bias + GeLU)</p>
+<p style="margin-bottom: 0em;">(bias + dropout + add)</p>
+<li>fusion of scale, mask and softmax operations:</li>
+<p style="margin-bottom: 0em;">one for general masking</p>
+<p style="margin-bottom: 0em;">another for implicit causal masking</p>
+</ul>
+</ul>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

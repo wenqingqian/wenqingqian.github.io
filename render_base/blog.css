@@ -1,0 +1,16 @@
+div.disp-toc-header {
+	text-align: center;
+}
+div.disp-toc-header h1 {
+	font-size: 180%;
+	color: var(--basic_black);
+}
+div.disp-toc-header h2 {
+	
+	color: var(--basic_black);
+}
+div.disp-toc-header p{
+	font-size: 70%;
+	margin-left: 5%;
+	margin-right: 5%;
+}

@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>GPT-4 Technical Report</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-10</h2>
+</div><p><a href="https://arxiv.org/pdf/2303.08774.pdf">论文原文</a></p>
+<section>
+<h1>intro</h1>
+<p>本文讲述了GPT-4的性能、改进以及前景</p>
+<p>GPT-4是一个多模态大语言模型, 能够接收文字和图片输入并输入文字</p>
+</section>
+<section>
+<h1>model and architecture</h1>
+<p>this report contains no further details about the architecture (including model size), hardware, training compute,dataset construction, training method, or similar</p>
+</section>
+<section>
+<h1>diff with GPT-3</h1>
+<ul>
+<li>使用Reinforcement Learning from Human Feedback (RLHF), 增强生成文本的可靠性</li>
+<li>不同语种性能都好</li>
+<li>支持图片输入</li>
+<li>请领域专家做对抗测试, 减少敏感答案</li>
+</ul>
+</section>
+<section>
+<h1>limitation</h1>
+<p>不能总结错误经验</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

@@ -1,0 +1,148 @@
+
+
+figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px 0;
+}
+
+figcaption {
+	margin-top: 10px;
+	font-size: 14px;
+	color: #666;
+}
+
+article, aside, footer, header, hgroup, nav, section, main {
+    display:block;
+}
+
+pre {
+    overflow-x: auto;
+}
+body, header {
+	color: var(--basic_black);
+	background-color: var(--basic_white);
+}
+main, footer {
+    width: 90%;
+    max-width: var(--max-width-show);
+    margin-left: auto;
+    margin-right: auto;
+	color: var(--basic_black);
+	background-color: var(--basic_white);
+}
+footer {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+h1, h2, h3 {
+	margin-bottom: 0.2em;
+	margin-top: 0.8em;
+}
+
+h1 {
+	color: #a81010;
+    font-size: 1.5em;
+}
+h2 {
+	color: #18b1a1;
+    font-size: 1.2em;
+}
+h3 {
+	color: #18b1a1;
+    font-size: 1em;
+}
+p {
+	color: var(--basic_black);
+    margin-top: 0.5em;
+}
+a {
+	color: var(--basic_href);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+div.display-eq {
+  text-align: center;
+  font-style: italic;
+}
+div.display-eq span.text {
+  font-style: normal;
+}
+
+canvas.box {
+  border: solid 2px black;
+  border-radius: 3px;
+}
+pre code {
+  margin-left: 2em;
+}
+ul li {
+  margin: 7px 0;
+}
+@media only screen and (max-width: var(--max-width-show)) {
+    header {
+        font-size: 2em;
+    }
+}
+.katex {
+    font-size: 1.1em !important;
+}
+
+.extras {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.unavailable, .extras a {
+    display: inline-block;
+
+    padding: 0.1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+
+    text-align: center;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    flex-basis: 10%;
+    flex-grow: 0;
+}
+.unavailable {
+    color: #888;
+}
+
+.github-icon {
+	font-size: 24px; /* 设置图标大小 */
+	color: #333; /* 设置图标颜色 */
+	text-decoration: none; /* 移除链接下划线 */
+	margin: 0px; /* 设置外边距 */
+  }
+.github-icon:hover {
+	color: #4078c0; /* 设置图标悬停颜色 */
+}
+@media only screen and (max-width: var(--max-width-show)) and (min-width: 400px) {
+    .unavailable, .extras a {
+        flex-basis: 20%;
+    }
+    .extras a.long {
+        flex-basis: 40%;
+    }
+    .extras {
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .unavailable, .extras a {
+        flex-basis: 33%;
+    }
+    .extras {
+        flex-wrap: wrap;
+    }
+
+}

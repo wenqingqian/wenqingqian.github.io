@@ -1,0 +1,18 @@
+:root {
+	--basic_white: #ffffff;
+	--basic_black: #121212;
+	--basic_href: #0000ee;
+	--max-width-show: 700px
+
+}
+body.dark-mode {
+	--basic_white: #121212;
+	--basic_black: #ffffff;
+	--basic_href: #bb86fc;
+}  
+
+  .dark-mode .english-link {
+	color: #ffffff;
+  }
+
+  

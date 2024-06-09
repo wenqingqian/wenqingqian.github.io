@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Listing</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d9bc9a;
+            /* background-image: url('/mywebsitelogotaichi.png'); 替换为您的图片路径 */
+            background-size: contain; /* 使图片尽可能大地填充空间，但不会被裁剪或变形 */
+            background-position: center center; /* 图片居中显示 */
+            background-repeat: no-repeat; /* 不重复图片 */
+            background-attachment: fixed; /* 背景图片固定不动 */
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #725047;
+        }
+        .fileSection {
+            width: 90%;
+            margin: 20px auto;
+            background-color: #f3e6c3;
+            border-radius: 10px;
+            # box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .fileSection h2 {
+            padding: 8px;
+            margin: 0;
+            background-color: #725047;
+            color: #f3e6c3;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 16px;
+        }
+        .fileList {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+        }
+        .fileList li {
+            margin-bottom: 5px;
+        }
+        .fileList li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .fileList li a.file {
+            color: #a6785e;
+            background-color: #f3e6c3;
+            border: 1px solid #725047;
+        }
+        .fileList li a.directory {
+            color: #a6785e;
+            background-color: #f3e6c3;
+            border: 1px solid #725047;
+        }
+        .fileList li a.app {
+            color: #a6785e;
+            background-color: #f3e6c3;
+            border: 1px solid #725047;
+        }
+        .fileList li a:hover {
+            color: #a6785e;
+            background-color: #f3e6c3;
+            border: 1px solid #725047;
+        }
+        .fileList li a.directory:hover {
+            color: #f3e6c3;
+            background-color: #725047;
+            border: 1px solid #725047;
+        }
+        .fileList li a.file:hover {
+            color: #f3e6c3;
+            background-color: #725047;
+            border: 1px solid #725047;
+        }
+        .fileList li a.app:hover {
+            color: #f3e6c3;
+            background-color: #725047;
+            border: 1px solid #725047;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download</h1>
+    <div class="fileSection">
+		<h2>code</h2>
+		<ul class="fileList" id="appList">
+			<li><a href="resource/10714.zip" download class="app">deeplearning system code resource</a></li>
+
+			<li><a href="resource/nemu.zip" download class="app">nemu code resource</a></li>
+		</ul>
+
+    </div>
+
+	<div class="fileSection">
+		<h2>latex</h2>
+		<ul class="fileList" id="appList">
+			<li><a href="resource/latex/sgemm.zip" download class="app">sgemm test in tesla p4</a></li>
+
+			<li><a href="resource/latex/onlinesoftmax.zip" download class="app">online softmax from math to code</a></li>
+		</ul>
+    </div>
+</body>
+</html>
+
+

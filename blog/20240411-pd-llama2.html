@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>LLaMA 2: Open Foundation and Fine-Tuned Chat Models</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-11</h2>
+</div><p><a href="https://arxiv.org/pdf/2307.09288.pdf">论文原文</a>, <a href="https://www.interconnects.ai/p/llama-2-part-2#%C2%A7ghost-attention-chat-trick">本文引用</a></p>
+<section>
+<h1>intro</h1>
+<p>本文介绍LLaMA 2/2-Chat, 最好的[19 Jul 2023]开源对话 fine-tuned LLM, 性能与一些闭源模型(ChatGPT)相当</p>
+<p>本文将同时介绍在模型上进行微调, 提高安全性的具体方法</p>
+</section>
+<section>
+<h1>Pretraining</h1>
+<p>跟LLaMA的区别:</p>
+<ul>
+<li>训练数据增加40%, 上下文长度翻倍</li>
+<li>注重安全和隐私, 对训练数据进行清洗, 包括去除一些来自含有个人隐私的网站的数据</li>
+<li>对于含有事实的数据进行上采样来增强知识, 抑制幻觉 (hallucinations)</li>
+<li>使用 grouped-query attention (GQA, 一种介于MHA和MQA之间的方法), 提高推理可扩展性</li>
+<li>RLHF: LLaMA 2-Chat版本即LLaMA 2的微调版本使用人类反馈强化学习</li>
+</ul>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/llama2/diff.png" style="display: block; margin: 0 auto;width: 80%;" alt="err! email me if you need">
+</section>
+<section>
+<h1>Fine-tuning</h1>
+<p>LLaMA 2-Chat = LLaMA 2 + instruction tuning + RLHF</p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/llama2/process.png" style="display: block; margin: 0 auto;width: 70%;" alt="err! email me if you need">
+<figure><figcaption>Training of LLaMA 2-CHAT</figcaption></figure><h2>Supervised Fine-Tuning</h2>
+<p>Quality Is All You Need, 用于SFT的数据的质量比数量更重要</p>
+<h2>RLHF</h2>
+<p>RLHF的过程是使模型对齐人类偏好</p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/llama2/code.png" style="display: block; margin: 0 auto;width: 90%;" alt="err! email me if you need">
+<p><u> Reward Model</u></p>
+<ul>
+<li>输入模型回复和prompt, 输出表示质量的标量值</li>
+<li>使用两个独立的rm, 一个表示有用, 一个表示安全</li>
+<li>使用预训练模型checkpoints初始化</li>
+</ul>
+<p><u> Iterative Fine-Tuning</u></p>
+<p>first Rejection Sampling fine-tuning then Proximal Policy Optimization (PPO)</p>
+<p>强化学习内容暂时不看</p>
+<h2>System Message for Multi-Turn Consistency</h2>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/llama2/ghostattn.png" style="display: block; margin: 0 auto;width: 60%;" alt="err! email me if you need">
+<p>为了让指令不会再几轮对话后丢失, 本文提出GhostAttention</p>
+<p>类似一种上下文蒸馏技术, 在长prompt上训练模型, 在提取的短prompt上运行SFT, 具体的(猜测):</p>
+<ul>
+<li>对于一个对话数据 \([u_1,a_1,\dots,u_n,a_n]\),  将指令 \(inst\)  拼接到所有的u后面</li>
+<li>通过RLHF对这个合成数据进行采样, 此时的结果是符合指令的多轮对话数据(此时的prompt应该是提取好的短prompt), 去掉除\(u_1\)之外所有的\(inst\)</li>
+<li>使用此数据进行指令微调, 将中间轮次的损失设置为0 </li>
+</ul>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

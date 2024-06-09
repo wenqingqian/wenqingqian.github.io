@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>[GPT3] Language models are few-shot learners</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-8</h2>
+</div><p><a href="https://proceedings.neurips.cc/paper_files/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf">论文原文</a></p>
+<section>
+<h1>intro</h1>
+<p>最近[22 Jul 2022]的许多研究都表明预训练模型搭配下游任务的微调在许多情况下效果显著, 但是微调过程需要大量的样本, 而人类只需要少量的示例或者说明就能做到</p>
+<p>本文证明了:</p>
+<ul>
+<li>通过增大参数量就能让语言模型显著提高下游任务在few-shot 下的性能</li>
+<li>基于下述原因认为移除fine-tune是必要的</li>
+<ul>
+<li>对每个新任务需要大量标记样本的需求限制了语言模型的适用性, 并且对于许多任务, 很难收集大型监督训练数据集</li>
+<li>在狭窄任务上的微调并不提高模型的泛化能力, 微调模型在特定基准上的性能可能会夸大底层任务的实际性能</li>
+<li>人类在接触一个下游语言任务时不需要大量的样本, 只需要一句对新任务的描述或者几个案例. 人类这种无缝融合和切换多个任务的能力是我们当前自然语言技术所欠缺的</li>
+<p style="margin-bottom: 0em;">移除fine-tune有两个解决方案</p>
+<li>meta-learning: 具体是通过 in-context learning  , 但效果距离期待的相差甚远</li>
+<li>Large scale transformers: Transformer 参数的每次增加都带来了下游 NLP 任务的改进, 有证据表明下游任务的 log loss 随着模型规模的增加呈现平滑的改善趋势</li>
+<p style="margin-bottom: 0em;">由于上下文学习涉及在模型的参数中吸收许多技能和任务, 因此上下文学习能力也会随着模型规模的增长而增长</p>
+</ul>
+</ul>
+<p>本文训练了一个拥有175B参数的自回归语言模型(GPT-3), 对于每一个任务. 都测试了模型 few-shot learning, one-shot learning, zero-shot learning 三种条件的性能. 虽然GPT-3也支持fine-tune, 但本文并未测试</p>
+<p>当参数足够多时, GPT-3在few-shot下有可能超越基于fine-tune的SOTA模型</p>
+</section>
+<section>
+<h1>Approach</h1>
+<p>本文的模型与GPT-2的方法相似, 在其基础上放大了模型、数据集、训练长度(100倍)</p>
+<p>GPT-2 是zero-shot, GPT-3 是few-shot, 即允许给一定数量的案例</p>
+</section>
+<section>
+<h1>Model and Architectures</h1>
+<p>传统的Transformer模型中, 每个注意力头都会关注输入序列中的所有位置, 这可能会导致计算资源的浪费和模型的过拟合</p>
+<p>稀疏Transformer模型使用局部的注意力模式, 只关注输入序列中的一小部分位置, 以减少计算和提高模型的泛化能力</p>
+</section>
+<section>
+<h1>Training Dataset</h1>
+<p>使用由万亿单词组成的Common Crawl数据集</p>
+<p>但是未完全清洗的Common Crawl数据集质量不如精心挑选的数据集</p>
+<p>本文使用的数据集进行如下改进:</p>
+<ul>
+<li>根据与高质量引用语料的相似性来筛选Common Crawl的数据</li>
+<li>对Common Crawl进行模糊去重处理, 以防止验证集出现过拟合</li>
+<li>补充高质量的语料</li>
+</ul>
+</section>
+<section>
+<h1>Training Process</h1>
+<p>更大的模型能够使用更大的batch size, 使用梯度噪音的大小来选择合适的batch size</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

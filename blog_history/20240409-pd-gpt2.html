@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>[GPT2] Language models are unsupervised multitask learners</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-9</h2>
+</div><section>
+<h1>intro</h1>
+<p>本文认为一个自然语言模型应该是一个更具通用性的系统, 能够执行许多任务, 并且无需为每个任务手动创建和标注训练数据集</p>
+<p>现有系统泛化能力不足的主要原因在于, 人们普遍在单一领域的数据集上进行单任务训练</p>
+<p>多任务学习是一个有前景的框架. 然而, 因为它可能需要继续扩大数据集和模型规模, 这目前难以承载的需求迫使我们探索多任务学习的其它可能</p>
+<p>本文证明语言模型在zero-shot下可以执行下游任务, 无需任何参数或架构的修改</p>
+</section>
+<section>
+<h1>Approach</h1>
+<p>NLP中的多任务学习:</p>
+<ul>
+<li>把各种下游子任务都转换为QA任务, 通过prompt去引导模型自动执行不同的操作</li>
+</ul>
+<p>GPT-2 使用zero-shot, 不做任何额外的下游任务训练, 而是提出prompt, 用自然语言的形式加在输入后面去提示模型</p>
+<p>OpenAI推测, 当数据量足够大、模型能力足够强的时候, 语言模型会学会推测并执行用自然语言提出的任务, 因为这样可以更好的实现下一词预测</p>
+</section>
+<section>
+<h1>Experiments</h1>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/gpt2/expr.png" style="display: block; margin: 0 auto;width: 95%;" alt="err! email me if you need">
+<figure><figcaption>Zero-shot task performance of WebText LMs as a function of model size on many NLP tasks</figcaption></figure><p>图中可以看出GPT-2的效果并不好, 但是从曲线中可以看出, 随着参数规模的增加, 性能也在逐步提升, 而GPT-3就是在此基础上, 将参数增加了100倍</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

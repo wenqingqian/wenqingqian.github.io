@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_english.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>[P-Tuning] GPT Understands, Too</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-13</h2>
+</div><p><a href="https://www.sciencedirect.com/science/article/pii/S2666651023000141">original paper</a>, <a href="https://kexue.fm/archives/8295">reference</a></p>
+<section>
+<h1>intro</h1>
+<p>In the past, we leverage handcrafted discrete prompts to steer the model for downstream applications, however, its performance is volatile since a single-word change in prompts could yield a drastic difference</p>
+<p>We propose P-Tuning:</p>
+<ul>
+<li>automatically search prompts in the continuous space</li>
+<li>with this method, GPTs can be better than BERTs on NLU, however, p-tuning also serves as a general method</li>
+</ul>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/ptuning/nludiff.png" style="display: block; margin: 0 auto;width: 73%;" alt="err! email me if you need">
+</section>
+<section>
+<h1>Approach</h1>
+<h2>automatically prompt generate</h2>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/ptuning/prodiff.png" style="display: block; margin: 0 auto;width: 74%;" alt="err! email me if you need">
+<figure><figcaption>discrete or continuous?</figcaption></figure><p>Use trainable embedding tensor to find continuous prompts instead of traditional discrete prompts</p>
+<h2>association</h2>
+<p>considering the prompt should be dependent on each other, we need some mechanism to associate prompt </p>
+<p>we use LSTM as prompt encoder which is beneficial to convergence and performance to generate the prompt instead of embedding </p>
+<h2>process</h2>
+<ul>
+<li>design the template for special task</li>
+<p style="margin-bottom: 0em;">template include virtual tokens (orange zone), fixed discrete prompts (blue zone)</p>
+<li>trainable prompt encoder (LSTM)</li>
+<li>back propagation to update the virtual tokens</li>
+<li>concatenate discrete prompts with optimized virtual tokens and discard the encoder in the inference</li>
+</ul>
+<h2>Fine-tune</h2>
+<p>in many-shot: searching the prompts and fine-tuning are conducted simultaneously</p>
+<p>in few-shot: searching the prompts and frozen the weights</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

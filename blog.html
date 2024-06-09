@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="./icon/appletree.png" type="image/png">
+	<link href="./render_base/fonts.css" rel="stylesheet">
+	<link href="./render_base/style_base.css" rel="stylesheet">
+	<link href="./render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="./render_base/sidebar.css" rel="stylesheet">
+	<link href="./render_base/common.css" rel="stylesheet">
+</head>
+<body>
+<main>
+	<header>Notes</header>
+<section><h1>cuda</h1><ul>
+<li><a href="./assets/pdf/flashattention.pdf">flash attention from math to code</a> ( 2024-5-16, pdf )<p>flash attention theory and CUDA implementation</p></li>
+<li><a href="./assets/pdf/onlinesoftmax.pdf">online softmax from math to code</a> ( 2024-5-9, pdf )<p>online softmax theory and CUDA implementation</p></li>
+<li><a href="./assets/pdf/sgemm.pdf">SGEMM Test in Tesla P4</a> ( 2024-4-22, pdf )<p>cuda gemm kernel</p></li>
+<li><a href="./blog/20240229-cuda-basic.html">CUDA basic</a> ( 2024-2-29, html )<p>warp, block, sm, ... , warp divergence, bank conflict, ..., cuda best practice extraction and some online resource summary</p></li>
+</ul></section>
+<section><h1>language</h1><ul>
+<li><a href="./assets/html/lua.html">lua syntax</a> ( 2023-8-19, html )<p>lua syntax, excerpted and summarized from the official manual</p></li>
+<li><a href="./assets/pdf/cpp.pdf">cpp syntax note</a> ( 2022-10-1, pdf )<p>from basic syntax to C++11, metaprogramming, ..., and give an example of smart pointer</p></li>
+</ul></section>
+<section><h1>llm paper reading</h1><ul>
+<li><a href="./blog/20240416-pd-megatron-lm.html">Megatron-LM</a> ( 2024-4-16, html )</li>
+<li><a href="./blog/20240414-pd-gqa.html">GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</a> ( 2024-4-5, html )</li>
+<li><a href="./blog/20240413-pd-p-tuning2.html">P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks</a> ( 2024-4-13, html )</li>
+<li><a href="./blog/20240413-pd-p-tuning.html">[P-Tuning] GPT Understands, Too</a> ( 2024-4-13, html )</li>
+<li><a href="./blog/20240412-pd-qlora.html">QLoRA: Efficient Finetuning of Quantized LLMs</a> ( 2024-4-12, html )</li>
+<li><a href="./blog/20240412-pd-lora.html">LoRA: Low-Rank Adaptation of Large Language Models</a> ( 2024-4-12, html )</li>
+<li><a href="./blog/20240411-pd-llama2.html">LLaMA 2: Open Foundation and Fine-Tuned Chat Models</a> ( 2024-4-11, html )</li>
+<li><a href="./blog/20240410-pd-llama.html">LLaMA: Open and Efficient Foundation Language Models</a> ( 2024-4-10, html )</li>
+<li><a href="./blog/20240410-pd-gpt4.html">GPT-4 Technical Report</a> ( 2024-4-10, html )</li>
+<li><a href="./blog/20240409-pd-gpt2.html">[GPT2] Language models are unsupervised multitask learners</a> ( 2024-4-9, html )</li>
+<li><a href="./blog/20240408-pd-gpt3.html">[GPT3] Language models are few-shot learners</a> ( 2024-4-8, html )</li>
+<li><a href="./blog/20240408-pd-gpt1.html">[GPT1] Improving language understanding by generative pre-training</a> ( 2024-4-8, html )</li>
+<li><a href="./blog/20240407-pd-gpt3.5.html">[GPT3.5] Large Language Model Is Not a Good Few-shot Information Extractor, but a Good Reranker for Hard Samples!</a> ( 2024-4-7, html )</li>
+<li><a href="./blog/20240406-pd-glm-130b.html">GLM-130B: An Open Bilingual Pre-trained Model</a> ( 2024-4-6, html )</li>
+<li><a href="./blog/20240405-pd-glm.html">GLM: General Language Model Pretraining with Autoregressive Blank Infilling</a> ( 2024-4-5, html )</li>
+<li><a href="./blog/20240405-pd-flashattn2.html">FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning</a> ( 2024-4-5, html )</li>
+<li><a href="./blog/20240405-pd-flashattn.html">FlashAttention: Fast and Memory-Efficient Exact Attentionwith IO-Awareness</a> ( 2024-4-5, html )</li>
+<li><a href="./blog/20240402-pd-mqa.html">[MQA] Fast Transformer Decoding: One Write-Head is All You Need</a> ( 2024-4-2, html )</li>
+<li><a href="./blog/20240401-pd-attentionisallyouneed.html">[Transformer] Attention is all you need</a> ( 2024-4-1, html )</li>
+</ul></section>
+<section><h1>other</h1><ul>
+<li><a href="./assets/html/dlsysmake.html">how to get a basic deep learning system</a> ( 2024-3-12, html )<p>pynotebook, use python to show how to create a basic dls, and have a example of linear regression</p></li>
+<li><a href="./assets/html/Linux.html">linux api and net program</a> ( 2023-3-2, html )</li>
+<li><a href="./assets/pdf/ml_dr_math.pdf">dimension reduction for machine learning</a> ( 2022-5-15, pdf )<p>derivation of MDS, PCA</p></li>
+</ul></section>
+
+		<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="/Users/wenqingqian/Documents/mytest/pw/index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+		</div>
+	</div>
+</main>
+
+
+<script src="./render_base/sidebar.js"></script> 
+<script src="./render_base/common.js"></script> 
+
+</body>
+</html>
+

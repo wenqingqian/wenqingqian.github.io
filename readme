@@ -1,0 +1,17 @@
+文件结构
+|- assets: 存放一些文件
+|- blog: 自动生成的blog的html文件
+|- blog_history: 自动生成历史记录
+|- cv: 手动简历
+|- generator \-run.sh: 自动生成blog.html和blog/*.html
+|            |-raw_file \- blog: 自动生成的blog对应cpp文件
+|                       |- blog_markdown: blog源文件
+|- render_base: 网站基础css,js
+|- blog.html 自动生成blog索引网页
+|- index.html 手动主页
+
+markdown转html支持格式
+1. #, ##, ### 三级标题
+2. - 支持嵌套无序列表
+3. ![size1,size2...](link1,link2...)(description(可选)) 单行多图, size为单行宽度百分比
+4. $eq$ 行内公式, $$eq$$ 单行公式, `code` 行内代码

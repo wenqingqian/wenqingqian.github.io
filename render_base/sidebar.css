@@ -1,0 +1,74 @@
+.settings-menu {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 1000;
+	color: var(--basic_black);
+
+}
+
+.settings-button {
+	background-color: var(--basic_white);
+	color: var(--basic_black);
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	font-family: "ZCOOL XiaoWei", regular;
+}
+
+.settings-options {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s ease-in-out;
+	/* display: none; */
+	position: absolute;
+	top: 40px;
+	left: 0;
+	background-color: var(--basic_white);
+	/* border: 1px solid #ccc; */
+	border-radius: 5px;
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+	width: 150px; /* 增大选项菜单的宽度 */
+}
+
+.settings-options .settings-button {
+	background-color: var(--basic_white);
+	/* color: #fff;  */
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	font-family: "ZCOOL XiaoWei", regular;
+}
+
+.settings-options .settings-inner-button {
+	background-color: var(--basic_white);
+	color: var(--basic_black); 
+	padding: 0px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	font-family: "ZCOOL XiaoWei", regular;
+}
+
+.settings-options a {
+	
+	display: block;
+	padding: 10px;
+	color: var(--basic_black);
+	text-decoration: none;
+}
+
+.settings-options a:hover, .settings-options button:hover {
+	/* background-color: #a81010; */
+	color: #a81010;
+}
+
+.settings-menu:hover .settings-options, .settings-options:hover  {
+	visibility: visible;
+	opacity: 1;	
+}

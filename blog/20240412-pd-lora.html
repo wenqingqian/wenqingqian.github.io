@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_english.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>LoRA: Low-Rank Adaptation of Large Language Models</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-12</h2>
+</div><p><a href="https://arxiv.org/pdf/2106.09685.pdf">original paper</a></p>
+<section>
+<h1>intro</h1>
+<p>Here are some flaws of existing techniques:</p>
+<ul>
+<li>Adapter Tuning: introduce inference latency by extending model depth</li>
+<li>Prefix Tuning: reduce the model's usable sequence length</li>
+</ul>
+<p>We take inspiration from previous work (hypo):</p>
+<ul>
+<li>the learned over-parametrized models in fact reside on a low intrinsic dimension</li>
+</ul>
+<p>propose Low-Rank Adaptation (LoRA) approach</p>
+</section>
+<section>
+<h1>Approach</h1>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/lora/app.png" style="display: block; margin: 0 auto;width: 25%;" alt="err! email me if you need">
+<p>we use low-rank matric to replace the pre-trained weights, specially:</p>
+<ul>
+<li>add new matrices AB next to the pre-trained weights which looks like the ResNet</li>
+<li>frozen the pre-trained weights, use AB as the trained parameters</li>
+<li>modify forward pass as</li>
+<p style="margin-bottom: 0em;"><div>\[ h=W_0x+BAx \]</div></p>
+<p style="margin-bottom: 0em;">while:</p>
+<ul>
+<li>pre-trained weights: \(W_0\in \mathbb R^{d\times k}\)</li>
+<li>input: \(x\)</li>
+<li>\(B\in \mathbb R^{d\times r}\), \(A\in \mathbb R^{r \times k}\), rank \(r\ll min(d,k)\)</li>
+</ul>
+<li>use \(W=W_0+BA\) as weights when inference</li>
+<li>when switch to another downstream task, recover \(W_0\) by subtracting BA and adding new B'A'</li>
+</ul>
+<p>We use a random Gaussian initialization for A and zero for B, so ∆W = BA is zero at the beginning of training  </p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

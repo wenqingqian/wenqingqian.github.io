@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-5</h2>
+</div><p><a href="https://arxiv.org/pdf/2307.08691.pdf">论文原文</a>, 本文引用<a href="https://zhuanlan.zhihu.com/p/668888063">1,</a><a href="https://zhuanlan.zhihu.com/p/665170554">2</a></p>
+<section>
+<h1>intro</h1>
+<p>本文主要从以下三点对FlashAttention的算法进行改进:</p>
+<ul>
+<li>调整计算逻辑, 减少non-matmul FLOPs</li>
+<li>并行注意力计算</li>
+<li>任务分配策略, 减少通信</li>
+</ul>
+<p>实现了FlashAttention的2倍速度</p>
+</section>
+<section>
+<h1>Reduce non-matmul FLOPs</h1>
+<h2>Forward</h2>
+<p>FlashAttention forward</p>
+<div>
+\[
+\begin{aligned}
+\mathbf O^{(1)}&=diag(\ell^{(1)})^{-1}e^{\mathbf S^{(1)}-m^{(1)}}\mathbf V^{(1)}\in \mathbb{R}^{B_r\times d}\\
+\mathbf O^{(2)}&=diag(\ell^{(1)}/\ell^{(2)})^{-1}\mathbf O^{(1)}+diag(\ell^{(2)})^{-1}e^{s^{(2)}-m}\mathbf V^{(2)}\\
+&=diag(\ell^{(2)})^{-1}e^{s^{(1)}-m}\mathbf V^{(1)}+diag(\ell^{(2)})^{-1}e^{s^{(2)}-m}\mathbf V^{(2)}=\mathbf O
+\end{aligned}
+\]
+</div>
+<p>FlashAttention-2 forward</p>
+<div>
+\[
+\begin{aligned}
+\tilde{\mathbf O}^{(1)}&=e^{\mathbf S^{(1)}-m^{(1)}}\mathbf V^{(1)}\in \mathbb{R}^{B_r\times d}\\
+\tilde{\mathbf O}^{(2)}&=diag(e^{m^{(1)}-m^{(2)}})\tilde{\mathbf O}^{(1)} + e^{\mathbf S^{(2)}-m^{(2)}}\mathbf V^{(2)}\\
+&=e^{\mathbf S^{(1)}-m^{(1)}}\mathbf V^{(1)}+ e^{\mathbf S^{(2)}-m^{(2)}}\mathbf V^{(2)}\\
+\mathbf O^{(2)}&=diag(\ell^{(2)})^{-1}\tilde{\mathbf O}^{(2)}=\mathbf O
+\end{aligned}
+\]
+</div>
+<p>每次计算减少一次除法, 只在最后对输出进行scale</p>
+<h2>Backword</h2>
+<p>FlashAttention backward</p>
+<div>
+\[
+\mathbf P_{ij}=diag(l_i)^{-1}exp(\mathbf S_{ij}^{masked}-m_i)\in \mathbb R^{B_r\times B_c}
+\]
+</div>
+<p>FlashAttention-2 backward</p>
+<div>
+\[
+logsumexp\space L^{(j)}=m^{(j)}+log(\ell^{(j)})\\
+\mathbf P_i^{(j)}=exp(\mathbf S_{ij}-L_i)\in \mathbb R^{B_r\times B_c}
+\]
+</div>
+<p>\(L\)是在forward中计算并保存的, 不再单独保存m,l</p>
+</section>
+<section>
+<h1>Parallelism</h1>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/flashattention2/alforward1.png" style="width: 40%;" alt="err! email me if you need">
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/flashattention2/alforward2.png" style="width: 40%;" alt="err! email me if you need">
+<h2>Forward</h2>
+<p>在Attention的计算中是围绕Q或者说query展开的, 对于一个query, 将其与KV矩阵计算完后就能得到这个query对应的O</p>
+<p>所以两代FA之间最主要的区别就是</p>
+<ul>
+<li>先遍历KV, 再遍历Q, 使得外层循环结束后才能得到完整的结果</li>
+<li>先遍历Q, 再遍历KV, 每进行一次内层循环就能得到当前query对应的完整的结果</li>
+</ul>
+<p>这使得</p>
+<ul>
+<li>1代在内循环需要存储所有query的结果O, 2代在内循环只用存储当前query的结果O, 前者放不进SRAM就需要频繁的对HBM进行IO</li>
+<li>2代的外循环可以并行</li>
+</ul>
+<h2>Backward</h2>
+<p>TODO</p>
+</section>
+<section>
+<h1>Work Partitioning Between warps</h1>
+<p>上一段可以理解为block间的并行, 这一段是block内也就是warp间的并行, 本质上还是源于上文Q和KV遍历顺序交换的结果</p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/flashattention2/warp.png" style="display: block; margin: 0 auto;width: 80%;" alt="err! email me if you need">
+<figure><figcaption>paper</figcaption></figure><img src="../generator/raw_file/blog_markdown/./pic/llmpost/flashattention2/warpcom.png" style="display: block; margin: 0 auto;width: 80%;" alt="err! email me if you need">
+<figure><figcaption><a href="https://zhuanlan.zhihu.com/p/665170554">refer</a></figcaption></figure><p>对于矩阵\(A\in \mathbb R^{a\times b}\times B\in \mathbb R^{b\times c}\), 在做Tiling时如果沿a或者c方向切开就可以并行执行, 直接将结果存回, 但是如果沿b方向切开, 也就是A的一行不是完整的一行, B的一列不是完整的一列, 那结果就需要先累加起来再存回, 这一步就是cross warp sync, 也就是图中左边的情况(1代)</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

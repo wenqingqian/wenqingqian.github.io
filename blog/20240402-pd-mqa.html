@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>[MQA] Fast Transformer Decoding: One Write-Head is All You Need</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-2</h2>
+</div><p><a href="http://arxiv.org/abs/1911.02150">论文原文</a>, 本文引用<a href="https://zhuanlan.zhihu.com/p/647130255">1,</a><a href="https://www.bilibili.com/video/BV1ga4y1r7hm/?spm_id_from=333.337.search-card.all.click&vd_source=6823fff4176fbb99da705bde30eb8cea">2</a></p>
+<section>
+<h1>intro</h1>
+<p>对于 transformer 中的解码器, 在每一步中需要用到已生成序列的 KV 矩阵, 在有 KV Cache 的情况下, KV 值每次都会被保留下来用于下一步计算, 而在模型很大或者序列长度很长的情况下, 很容易出现KV值无法很好的被缓存的情况</p>
+<p>本文提出 Multi-Query Attention, 让多个注意力头之间共享一个KV矩阵, 减少需要保存的 KV 值, 在降低一定精度的情况下获得性能提升</p>
+</section>
+<section>
+<h1>KV Cache</h1>
+<p>首先, 缓存 KV 的意义是什么, 为什么不用缓存 Q, 事实上, 在每一步计算中, KV 是对于整个序列的权重信息, 而 Q 矩阵是当前 token 的值, 其中 KV 是逐渐累积的</p>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/multiqueryattention/qkv.png" style="display: block; margin: 0 auto;width: 70%;" alt="err! email me if you need">
+<figure><figcaption>QKV</figcaption></figure><p>具体过程是(假设已经生成部分序列):</p>
+<ul>
+<li>解码器得到一个新的结果, 这个结果与之前序列拼接作为下一次 decoder 的输入</li>
+<li>对新的序列进行位置编码, 对这一次新增的词计算它的 QKV 向量</li>
+<li>将 KV 向量与之前的 KV Cache 相拼接就得到了接下来 Attention 要用的 KV 矩阵, 同时这个 KV 矩阵代替原先的 KV Cache, Q 矩阵实际上就是2中的 Q 向量(针对 MHA 中的一个 head)</li>
+</ul>
+<p>不要与 encoder 传来的 KV 混淆</p>
+</section>
+<section>
+<h1>Performance</h1>
+<p>在KV矩阵不断变大的情况下, 很容易就会导致缓存放不下, 这个缓存我理解为除了全局内存以外的显存, 包括共享内存, L1/2 Cache等等(A100 L2 Cache 40MB)</p>
+<p>此时就只能去全局内存读数据就会导致访存延时, 通过让一组Q(Multi-Head)共享一个KV矩阵减少访存延时, 此时计算量是不变的, 只是用相同的KV代替原先在各个Head上不同的KV</p>
+<p>论文中给出的存算比为(以Batched Multi-Head Attention为例)从\(\Theta(\frac{n}{d}+\frac{1}{b})\)降低到  \(\Theta(\frac{1}{d}+\frac{n}{dh}+\frac{1}{b})\)</p>
+<p>其中:</p>
+<ul>
+<li>d: 输入长度</li>
+<li>n: MQA调用次数</li>
+<li>h: Head数量</li>
+<li>b: batch</li>
+</ul>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

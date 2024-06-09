@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog</title>
+	<link rel="icon" href="../icon/appletree.png" type="image/png">
+	<link href="../render_base/fonts.css" rel="stylesheet">
+	<link href="../render_base/blog.css" rel="stylesheet">
+	<link href="../render_base/style_base.css" rel="stylesheet">
+	<link href="../render_base/style_chinese.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="../render_base/sidebar.css" rel="stylesheet">
+	<link href="../render_base/common.css" rel="stylesheet">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main>
+<div class='disp-toc-header'>
+<h1>GLM: General Language Model Pretraining with Autoregressive Blank Infilling</h1><h2 style="font-family: 'ZCOOL XiaoWei', regular;"> 2024-4-5</h2>
+</div><p><a href="https://arxiv.org/pdf/2103.10360.pdf">论文原文</a></p>
+<section>
+<h1>intro</h1>
+<p>NLP任务通常分为三类:</p>
+<ul>
+<li>natural language understanding(NLU): 文本分析</li>
+<li>Unconditional generation: 文本生成</li>
+<li>Conditional generation: 翻译, seq2seq</li>
+</ul>
+<p>预训练模型也通常分为三类:</p>
+<ul>
+<li>autoregressive: GPT</li>
+<p style="margin-bottom: 0em;">从左往右学习, 在长文本生成任务中很成功, 但由于单边注意力机制, 在NLU任务中无法完全捕获词间依赖</p>
+<li>autoencoding: BERT</li>
+<p style="margin-bottom: 0em;">双边注意力机制, 适合NLU, 但无法直接应用于文本生成</p>
+<li>encoder-decoder: T5</li>
+<p style="margin-bottom: 0em;">encoder采用双边注意力机制, decoder采用单边注意力机制, 用交叉注意力连接, 可以用于NLU和condGen任务但需要更多的参数</p>
+<p style="margin-bottom: 0em;">由于自回归和自编码的本质区别, 难以简单继承两者的优点</p>
+</ul>
+<p>本文提出GLM(General Language Model), 基于空白段自回归, 来实现一个通用语言模型应对所有的NLP任务</p>
+</section>
+<section>
+<h1>pretrain</h1>
+<p>通过对输入序列的随机连续段进行掩盖(blank infilling)(autoencoding), 然后训练模型重建这个序列(autoregressive)</p>
+<p>对于blank infilling, 与T5不同, 本文做了以下两个improvements:</p>
+<ul>
+<li>空白段乱序预测</li>
+<li>2D位置编码</li>
+</ul>
+<p>此外, 本文受<a href="https://arxiv.org/abs/2012.11926">Pattern-Exploiting Training (PET)</a>启发, 将NLU问题视为可以用自回归生成的完形填空问题</p>
+<h2>Mask</h2>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/glm/blankinfilling.png" style="display: block; margin: 0 auto;width: 70%;" alt="err! email me if you need">
+<p>其中:</p>
+<ul>
+<li>Part A: mask后的序列</li>
+<li>Part B: 被mask的段</li>
+<li>(c): 对Part B进行打乱, 对每一个段填充特殊的[START]和[END] token</li>
+<li>通过掩码注意力机制, Part A可以关注A中全部信息(蓝框), 但不能关注B(黄绿)</li>
+<p style="margin-bottom: 0em;">Part B可以关注A(蓝)和B中自己的前置词(黄色段不能看绿色, 绿色可以看黄色)</p>
+<p style="margin-bottom: 0em;">借此模型就可以自动学习到一个双边编码器和单边解码器</p>
+</ul>
+<h2>2D Position Encoding</h2>
+<p>图(c)中的位置编码, 其中:</p>
+<ul>
+<li>Position 1: 片段在原始文本的位置</li>
+<p style="margin-bottom: 0em;">A中mask等同token编码, 即一个mask段与token在位置编码上是相同的单位, mask段中的tokens(B)共享与mask段在A中相同的Pos1</p>
+<li>Position 2: 片段内词的相对位置</li>
+<p style="margin-bottom: 0em;">A中的token包括mask的Pos2为0</p>
+</ul>
+<p>这样编码的好处是模型无法意识到mask段的长度, 因为生成文本的长度一般是事先未知的</p>
+<h2>Multi-Task Pretraining</h2>
+<p>对于不同任务的训练, 只需要调整mask段的长度和数量</p>
+<ul>
+<li>NLU: 通过短mask段</li>
+<li>uncondGen(文本生成): 单一的长mask段, 长度服从整个序列长度50%-100%的均匀分布</li>
+<li>condGen(seq2seq): mask段被限制为一个完整的句子, mask段长度和为原始序列的15%</li>
+</ul>
+<h2>Model Architecture</h2>
+<ul>
+<li>重排残差连接和层归一化的顺序</li>
+<li>使用单个线性层做预测</li>
+<li>使用GeLUs代替ReLU</li>
+</ul>
+<h2>Finetuning GLM</h2>
+<img src="../generator/raw_file/blog_markdown/./pic/llmpost/glm/finetu.png" style="display: block; margin: 0 auto;width: 70%;" alt="err! email me if you need">
+<figure><figcaption>formulation of the sentiment classificationtask as blank infilling with GLM</figcaption></figure><p>对于NLU任务, 通常做法是用一个线性分类器将预训练模型产生的序列的 embedding 作为输入,并预测正确的标签</p>
+<p>GLM 将 NLU 分类任务看作完形填空</p>
+<p>给定一个标记的示例 \((\boldsymbol x,y)\), 可以将 \(\boldsymbol x\) 通过一个模板将其转化为一个完形填空问题 \(c(\boldsymbol x)\)</p>
+<p>对于情感分类问题可以用图中的"{SENTENCE}. It's really [MASK]"模板, 同时将候选标签 \(y\) 映射到填空答案 \(v(y)\), 这里是\(y\in (positive, negative)\to v(y)\in (good, bad)\)</p>
+</section>
+
+	
+	<div class="settings-menu">
+		<button class="settings-button">Control</button>
+		<div class="settings-options">
+			<a class="settings-button" href="../index.html">home</a>
+			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
+			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
+			<a class="settings-button" href="../blog.html">back to blog</a>
+		</div>
+	</div>
+</main>
+
+
+<script src="../render_base/sidebar.js"></script> 
+<script src="../render_base/common.js"></script> 
+
+</body>
+</html>
+

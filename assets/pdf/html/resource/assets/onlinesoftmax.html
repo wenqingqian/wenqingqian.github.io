@@ -1,0 +1,103 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=line-stack&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOQBOArtJALY6wRg7UCGkMsAjAAYhlIgF8ANETDBgWSCAKpiGahADmajlU6kIAZxHoJRXJugATRUXTnunAgG1Ke4ADMwjHZXGxKAZlgQTj09WD1OVxwAfRd3T1JvXwAmQODQmCwIaGjYjy8AXTFJdDVVS0JlXHcqPwBSb2tYVTUACwpfABZ64uIAI2AwaUYa7saAYxgwTiyAGU5enCwCMDocIqkZLH7SK2VI7lpqfArlMM4ANxwAQT0ASU9NRVFG56Me0ivdPV3iMABPEDHShjbg4NTAah_BrKfr0WyQgDinAUsFcnCwehwPRsdkclAArHwkokCUSAFTEnykpJkjokwk0gAc9PJfAAbCyaX5Kb4GWS2XSqXyiczCm8iH9Pvofuh_oCqOd0bQcNDiNBOMwqIwDOt0JjVDhvrAHI0lKd1ZrfLl4qrlHKgZlsrbiAB6F1hKZjADWVAAKgN0c6cVNHAIAHRCNmMpJ-HzhoQAdjZAE4-HGIwI2Xxkx105GOsnY7B45n8Yz8XnM4W2ZWE4zo5XGR18QmxcRjMozcoLUCAkEQmdIjE3HkEtjfgCHVkVeP0G6PZxvX6A1gg7BbCHjSXk1GK8WM_WBLn9wJBAnk0k84IkpmrwIknw9_HBPio5Xk8n8QIrx1s62XuOXZqhqQIpP26TQI6OQjjas4YJOVBQWu856J6Pq-P6UyrnBG72FuGZluelavmy34npmSQJmm5EJnWZHPgIjJCFe-I3kW8YdAKWbiOGfB8YySZtkYRCFKIADcQA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.0/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: 'runtime iteration 1000'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['softmax', '3 pass safe_softmax', '2 pass online_softmax']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['512', '512*2', '512*4', '512*8', '512*16', '512*32', '512*64', '512*128']
+  },
+  yAxis: {
+    type: 'value',
+    name: 'ms'
+  },
+  series: [
+    {
+      name: 'softmax',
+      type: 'line',
+      // stack: 'Total',
+      data: [0.006823, 0.007691, 0.006194, 0.006493, 0.006585, 0.006936, 0.007882, 0.008457]
+    },
+    {
+      name: '3 pass safe_softmax',
+      type: 'line',
+      // stack: 'Total',
+      data: [0.009685, 0.008804, 0.010792, 0.010206, 0.010215, 0.010568, 0.009950, 0.014197]
+    },
+    {
+      name: '2 pass online_softmax',
+      type: 'line',
+      // stack: 'Total',
+      data: [0.005879, 0.005660, 0.006271, 0.007780, 0.010800, 0.015203, 0.046461,0.111876]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

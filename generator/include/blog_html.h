@@ -95,7 +95,7 @@ inline string blog_index_head = R"xxxxx(
 </head>
 <body>
 <main>
-	<header>Notes</header>
+	<header>Notes (auto generate)</header>
 )xxxxx";
 
 

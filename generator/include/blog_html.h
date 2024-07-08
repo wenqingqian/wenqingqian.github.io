@@ -103,7 +103,7 @@ inline string blog_index_tail = R"xxxxx(
 		<div class="settings-menu">
 		<button class="settings-button">Control</button>
 		<div class="settings-options">
-			<a class="settings-button" href="/Users/wenqingqian/Documents/mytest/pw/index.html">home</a>
+			<a class="settings-button" href="./index.html">home</a>
 			<button id="color_mode_button" class="settings-button" onclick="toggleDarkMode()"> dark</button>
 			<a style="color: var(--basic-black);">width <button id="adjustWidth-add" class="settings-inner-button">+</button> / <button id="adjustWidth-sub" class="settings-inner-button">-</button></a>
 		</div>

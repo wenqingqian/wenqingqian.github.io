@@ -28,6 +28,7 @@ extern blog blog_20240416_pd_megatron_lm;
 extern blog blog_20240422_sgemm;
 extern blog blog_20240509_online_softmax;
 extern blog blog_20240516_flash_attention;
+extern blog blog_20240711_book_gpgpu1;
 
 void blog_generate(){
 	vector<blog> blogvec {
@@ -59,6 +60,7 @@ void blog_generate(){
 		blog_20240422_sgemm,
 		blog_20240509_online_softmax,
 		blog_20240516_flash_attention,
+		blog_20240711_book_gpgpu1,
 	};
 	extern void generate_blog_index(vector<blog>&);
 	generate_blog_index(blogvec);
@@ -70,6 +72,13 @@ int main(){
 	blog_generate();
 
 }
+
+
+
+
+
+
+
 
 
 

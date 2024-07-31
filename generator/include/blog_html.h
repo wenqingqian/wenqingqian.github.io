@@ -95,7 +95,8 @@ inline string blog_index_head = R"xxxxx(
 </head>
 <body>
 <main>
-	<header>Notes (auto generate)</header>
+	<header>Notes</header>
+	<div class='disp-toc-header'><p>This page and the following HTML-type web pages are all built by the automatic generator in this repository. The corresponding markdown source files of these HTML-type web pages can be found in the repository</p></div>
 )xxxxx";
 
 
